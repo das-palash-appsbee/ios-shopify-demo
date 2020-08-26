@@ -48,7 +48,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
     func configureFrom(_ viewModel: CollectionViewModel) {
         self.viewModel = viewModel
         
-        print("placeholder----\(String(describing: viewModel.imageURL))")
+        //print("placeholder----\(String(describing: viewModel.imageURL))")
         
         self.titleImageView.setImageFrom(viewModel.imageURL)
         self.collectionView.reloadData()

@@ -97,6 +97,7 @@
 		B55EA31343391B23E102A329 /* Pods_Storefront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD5BBCE97D317BCAF4870A8 /* Pods_Storefront.framework */; };
 		ED72A7F224EE916D00E7E6AC /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED72A7F024EE916400E7E6AC /* intempt.framework */; };
 		ED72A7F324EE916D00E7E6AC /* intempt.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = ED72A7F024EE916400E7E6AC /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED72A8CE24EEAF6F00E7E6AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72A8CD24EEAF6F00E7E6AC /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -208,6 +209,7 @@
 		9AFA3B861E6DFF530056C5AA /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		CDD8E2E2222567B6B6965866 /* Pods-Storefront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storefront.release.xcconfig"; path = "Target Support Files/Pods-Storefront/Pods-Storefront.release.xcconfig"; sourceTree = "<group>"; };
 		ED72A7F024EE916400E7E6AC /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
+		ED72A8CD24EEAF6F00E7E6AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +384,7 @@
 		9AAFAB781E60BD5800864A17 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED72A8CC24EEAF4500E7E6AC /* Launch */,
 				9ABEB3EB21260C1F00A373F2 /* Account */,
 				9AAFAB791E60BDED00864A17 /* Collections */,
 				9AFA3B781E6DB6FE0056C5AA /* Products */,
@@ -563,6 +566,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		ED72A8CC24EEAF4500E7E6AC /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				ED72A8CD24EEAF6F00E7E6AC /* ViewController.swift */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -716,6 +727,7 @@
 				9A15B73A1E64627A0078E7C5 /* StorefrontTableView.swift in Sources */,
 				9ABEB3DD212447AC00A373F2 /* GiftCardViewModel+PayGiftCard.swift in Sources */,
 				9A21F29F1E7EC8AE00E00F4B /* ImageViewController.swift in Sources */,
+				ED72A8CE24EEAF6F00E7E6AC /* ViewController.swift in Sources */,
 				9AAFAB8C1E60C3C700864A17 /* ViewModel.swift in Sources */,
 				9A27C3241E8FDA4900218EE8 /* AddressViewModel.swift in Sources */,
 				9A9C92B51ED4B0B40027F049 /* Color.swift in Sources */,

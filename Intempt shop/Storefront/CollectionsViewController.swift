@@ -1,47 +1,39 @@
-//
-//  CollectionsViewController.swift
-//  Storefront
-//
-//  Created by Shopify.
-//  Copyright (c) 2017 Shopify Inc. All rights reserved.
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-//
+
 
 import UIKit
 import MobileBuySDK
 import intempt
 class CollectionsViewController: UIViewController {
+    
+    var strFlag = ""
 
     @IBOutlet weak var tableView: StorefrontTableView!
-    
+    @IBOutlet weak var bannerImage: UIImageView!
+    @IBOutlet weak var scrolView: UIScrollView!
+    @IBOutlet weak var img1: UIImageView!
+    @IBOutlet weak var img2: UIImageView!
+    @IBOutlet weak var img3: UIImageView!
+    @IBOutlet weak var img4: UIImageView!
+    @IBOutlet weak var img5: UIImageView!
+    @IBOutlet weak var img6: UIImageView!
+    @IBOutlet weak var img7: UIImageView!
+    @IBOutlet weak var img8: UIImageView!
+    @IBOutlet weak var footerView: UIView!
+
     fileprivate var collections: PageableArray<CollectionViewModel>!
-    
+    fileprivate var collections1: PageableArray<CollectionViewModel>!
+
     // ----------------------------------
     //  MARK: - View Loading -
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   Intempt.tracking(withOrgId: "playground", andSourceId: "129278878333997056", andToken: "3lu3TRxGiulHUIyB5af29KBQU3XYSsSy.zFPJ3SX0R_PSCYAPLxh0fIlz1I7wW-UN6hQI9SVII6uKgjDo2fTCOAqB-4uLpErz");
+        self.tableView.isHidden = true
+        self.scrolView.contentSize = CGSize (width: self.scrolView.frame.size.width, height: self.scrolView.frame.size.height + self.footerView.frame.origin.y + 30)
        Intempt.tracking(withOrgId: "playground", andSourceId: "129646758011539456", andToken: "yohT_JeIv7YxjcKwfIamzrYoLi1FYzb8.QMDmUX5hynkQzYzfJQbCX5ozGeYDfHqC1rhKiB99uFPjln1Yte-QuYSQsi0h764j")
         self.configureTableView()
         self.fetchCollections()
+        self.navigationItem.setHidesBackButton(true, animated: true);
     }
     
     private func configureTableView() {
@@ -52,14 +44,36 @@ class CollectionsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated: true);
+
+    }
+    
     // ----------------------------------
     //  MARK: - Fetching -
     //
     fileprivate func fetchCollections(after cursor: String? = nil) {
+        
+        
         Client.shared.fetchCollections(after: cursor) { collections in
             if let collections = collections {
+                
+                print("data---\(collections.items)")
+                
+
                 self.collections = collections
+               // let collection = self.collections1.items[0]
+
+              //  let ary = NSMutableArray()
+              //  ary.add(collection)
+              //  print("ary----\(ary)")
+               
+
+                //print("data----\(self.collections1.items[0])")
+               // self.collections.appendPage(from: self.collections1.items[0])
+
                 self.tableView.reloadData()
+                
             }
         }
     }
@@ -94,6 +108,168 @@ extension CollectionsViewController {
         let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
         self.navigationController!.present(cartController, animated: true, completion: nil)
     }
+    @IBAction private func clickCollectionAction(_ sender: UIButton) {
+        
+        if sender.tag == 0
+        {
+            if self.strFlag == ""
+              {
+                    let collection         = self.collections.items[1]
+                    let productsController = self.productsViewControllerWith(collection)
+                    self.navigationController!.show(productsController, sender: self)
+                
+                  }
+                  else
+                  {
+                    let collection         = self.collections.items[8]
+                                      let productsController = self.productsViewControllerWith(collection)
+                                      self.navigationController!.show(productsController, sender: self)
+                                  
+                    
+                      }
+        }
+        
+      else  if sender.tag == 1
+               {
+                   if self.strFlag == ""
+                     {
+                           let collection         = self.collections.items[2]
+                           let productsController = self.productsViewControllerWith(collection)
+                           self.navigationController!.show(productsController, sender: self)
+                       
+                         }
+                         else
+                         {
+                           let collection         = self.collections.items[8]
+                                             let productsController = self.productsViewControllerWith(collection)
+                                             self.navigationController!.show(productsController, sender: self)
+                                         
+                           
+                             }
+               }
+        else  if sender.tag == 2
+                      {
+                          if self.strFlag == ""
+                            {
+                                  let collection         = self.collections.items[3]
+                                  let productsController = self.productsViewControllerWith(collection)
+                                  self.navigationController!.show(productsController, sender: self)
+                              
+                                }
+                                else
+                                {
+                                  let collection         = self.collections.items[7]
+                                                    let productsController = self.productsViewControllerWith(collection)
+                                                    self.navigationController!.show(productsController, sender: self)
+                                                
+                                  
+                                    }
+                      }
+        
+        else  if sender.tag == 3
+                           {
+                               if self.strFlag == ""
+                                 {
+                                       let collection         = self.collections.items[10]
+                                       let productsController = self.productsViewControllerWith(collection)
+                                       self.navigationController!.show(productsController, sender: self)
+                                   
+                                     }
+                                     else
+                                     {
+                                       let collection         = self.collections.items[6]
+                                                         let productsController = self.productsViewControllerWith(collection)
+                                                         self.navigationController!.show(productsController, sender: self)
+                                                     
+                                       
+                                         }
+                           }
+        else  if sender.tag == 4
+                                 {
+                                     if self.strFlag == ""
+                                       {
+                                             let collection         = self.collections.items[11]
+                                             let productsController = self.productsViewControllerWith(collection)
+                                             self.navigationController!.show(productsController, sender: self)
+                                         
+                                           }
+                                           else
+                                           {
+                                             let collection         = self.collections.items[5]
+                                                               let productsController = self.productsViewControllerWith(collection)
+                                                               self.navigationController!.show(productsController, sender: self)
+                                                           
+                                             
+                                               }
+                                 }
+        
+        else  if sender.tag == 5
+                                 {
+                                     if self.strFlag == ""
+                                       {
+                                             let collection         = self.collections.items[8]
+                                             let productsController = self.productsViewControllerWith(collection)
+                                             self.navigationController!.show(productsController, sender: self)
+                                         
+                                           }
+                                           else
+                                           {
+                                             let collection         = self.collections.items[4]
+                                                               let productsController = self.productsViewControllerWith(collection)
+                                                               self.navigationController!.show(productsController, sender: self)
+                                                           
+                                             
+                                               }
+                                 }
+    }
+
+    @IBAction private func clickAction(_ sender: Any) {
+        UIView.animate(withDuration: 1.0) {
+            
+            //3-sale
+            
+            //2 pant
+           
+//    let collection         = self.collections.items[3]
+//    let productsController = self.productsViewControllerWith(collection)
+//    self.navigationController!.show(productsController, sender: self)
+            if self.strFlag == ""
+        {
+            self.bannerImage.image = UIImage.init(named: "1.png")
+            self.img1.image = UIImage.init(named: "A1.png")
+                       self.img2.image = UIImage.init(named: "A2.png")
+                       self.img3.image = UIImage.init(named: "A3.png")
+                       self.img4.image = UIImage.init(named: "A4.png")
+            self.img5.image = UIImage.init(named: "A5.png")
+            self.img6.image = UIImage.init(named: "dress1.png")
+
+                       self.img7.image = UIImage.init(named: "i12.png")
+                       self.img8.image = UIImage.init(named: "i15.png")
+          
+
+
+            self.strFlag = "1"
+        }
+        else
+        {
+            self.bannerImage.image = UIImage.init(named: "2.png")
+
+              self.img1.image = UIImage.init(named: "bag.png")
+                      self.img2.image = UIImage.init(named: "pants.png")
+                      self.img3.image = UIImage.init(named: "sale.png")
+                      self.img4.image = UIImage.init(named: "jackets.png")
+                                 self.img5.image = UIImage.init(named: "shoes.png")
+            self.img6.image = UIImage.init(named: "dress.png")
+
+                      self.img7.image = UIImage.init(named: "i13.png")
+                      self.img8.image = UIImage.init(named: "i16.png")
+
+
+            self.strFlag = ""
+        }
+        }
+           
+       }
 }
 
 // ----------------------------------
@@ -143,6 +319,7 @@ extension CollectionsViewController: StorefrontTableViewDelegate {
                 if let collections = collections {
                     
                     self.collections.appendPage(from: collections)
+                    
                     
                     self.tableView.reloadData()
                     self.tableView.completePaging()

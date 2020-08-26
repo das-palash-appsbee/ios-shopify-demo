@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jF6-rb-fCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-551.87406296851577"/>
+            <point key="canvasLocation" x="1103" y="-539"/>
         </scene>
         <!--Account-->
         <scene sceneID="qrh-8v-yl6">
@@ -191,6 +191,31 @@
             </objects>
             <point key="canvasLocation" x="1773.5999999999999" y="-552.77361319340332"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Osg-fv-7jG">
+            <objects>
+                <viewController id="YE7-xm-GaW" customClass="ViewController" customModule="Intempt_shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sv1-mG-Og3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="L8q-fG-Qoq">
+                                <rect key="frame" x="65" y="228" width="214" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bko-25-L57"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uyy-UA-Dwr"/>
+                    <connections>
+                        <outlet property="img" destination="L8q-fG-Qoq" id="kYf-bD-03M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IdL-eX-7dS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="72.413793103448285"/>
+        </scene>
         <!--Intempt Demo Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -199,8 +224,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="300" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FJA-Xo-Ook" customClass="StorefrontTableView" customModule="Intempt_shop" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="300" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FJA-Xo-Ook" customClass="StorefrontTableView" customModule="Intempt_shop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="173" width="375" height="290"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cellNibName" value="CollectionCell"/>
@@ -210,20 +236,131 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yWN-Rn-1V8"/>
                                 </connections>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-Qu-IBD">
+                                <rect key="frame" x="0.0" y="234" width="375" height="433"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkM-WY-2ef">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="381"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSO-PS-hDE">
+                                                <rect key="frame" x="-14" y="32" width="400" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bag" translatesAutoresizingMaskIntoConstraints="NO" id="gWj-CU-V2a">
+                                                <rect key="frame" x="18" y="75" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pants" translatesAutoresizingMaskIntoConstraints="NO" id="WVL-b8-DVN">
+                                                <rect key="frame" x="212" y="75" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-hH-RRw">
+                                                <rect key="frame" x="212" y="75" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLq-uf-tS7"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sale" translatesAutoresizingMaskIntoConstraints="NO" id="hvC-Ee-1mG">
+                                                <rect key="frame" x="18" y="180" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-pd-phd">
+                                                <rect key="frame" x="21" y="183" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vt-KZ-Y8u"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jackets" translatesAutoresizingMaskIntoConstraints="NO" id="dli-4M-44t">
+                                                <rect key="frame" x="211" y="180" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbk-hj-AfU">
+                                                <rect key="frame" x="212" y="182" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Zf-mv-dWr"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="DOt-bd-lOw">
+                                                <rect key="frame" x="18" y="281" width="135" height="86"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-vX-Cze">
+                                                <rect key="frame" x="18" y="281" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QI4-La-KYP"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dress" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-OF-uDU">
+                                                <rect key="frame" x="209" y="281" width="135" height="86"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egz-lf-je9">
+                                                <rect key="frame" x="212" y="282" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeN-bB-rq0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tx-ZJ-BTB">
+                                                <rect key="frame" x="18" y="75" width="135" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gV-Uc-1bI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-rF-msK">
+                                        <rect key="frame" x="0.0" y="400" width="374" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="i13" translatesAutoresizingMaskIntoConstraints="NO" id="YER-K4-aVd">
+                                                <rect key="frame" x="0.0" y="2" width="375" height="114"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="a8E-Pc-4zo">
+                                        <rect key="frame" x="0.0" y="500" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="i16" translatesAutoresizingMaskIntoConstraints="NO" id="rgZ-kT-XWc">
+                                                <rect key="frame" x="-10" y="-2" width="384" height="99"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKD-aK-nui">
+                                <rect key="frame" x="0.0" y="44" width="375" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="FJA-Xo-Ook" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5eC-TZ-ObZ"/>
-                            <constraint firstItem="wI9-Ha-FJb" firstAttribute="trailing" secondItem="FJA-Xo-Ook" secondAttribute="trailing" id="IfH-27-oI7"/>
-                            <constraint firstItem="FJA-Xo-Ook" firstAttribute="leading" secondItem="wI9-Ha-FJb" secondAttribute="leading" id="JZC-9D-Myf"/>
-                            <constraint firstAttribute="bottom" secondItem="FJA-Xo-Ook" secondAttribute="bottom" id="fmZ-eY-4wD"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wI9-Ha-FJb"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Intempt Demo Shop" id="9WP-3t-7If">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Account" id="0GW-gD-SPf">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="hSM-aq-7up">
                             <connections>
-                                <action selector="accountAction:" destination="BYZ-38-t0r" id="rJX-bK-F66"/>
+                                <action selector="clickAction:" destination="BYZ-38-t0r" id="eum-oQ-One"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="6n0-30-yb1" customClass="CartButton" customModule="Intempt_shop" customModuleProvider="target">
@@ -232,14 +369,28 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="bannerImage" destination="qKD-aK-nui" id="W6d-GQ-t3B"/>
+                        <outlet property="footerView" destination="a8E-Pc-4zo" id="AMc-QL-YYL"/>
+                        <outlet property="img1" destination="gWj-CU-V2a" id="gdT-uT-jSH"/>
+                        <outlet property="img2" destination="WVL-b8-DVN" id="6q2-vk-lkj"/>
+                        <outlet property="img3" destination="hvC-Ee-1mG" id="erO-1M-3dy"/>
+                        <outlet property="img4" destination="dli-4M-44t" id="QNP-nv-6Yd"/>
+                        <outlet property="img5" destination="DOt-bd-lOw" id="7un-Ag-SZx"/>
+                        <outlet property="img6" destination="WAS-OF-uDU" id="WTA-Ph-ff6"/>
+                        <outlet property="img7" destination="YER-K4-aVd" id="C7l-WO-GW0"/>
+                        <outlet property="img8" destination="rgZ-kT-XWc" id="mxE-rH-FXH"/>
+                        <outlet property="scrolView" destination="xMX-Qu-IBD" id="UVv-yB-rw6"/>
                         <outlet property="tableView" destination="FJA-Xo-Ook" id="zuu-Zf-hAN"/>
                         <segue destination="AbI-Ns-2vc" kind="show" identifier="pushProducts" id="f9n-Ry-sCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="139"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="129.98500749625188"/>
         </scene>
         <!--Cart Navigation Controller-->
         <scene sceneID="90s-gs-WtJ">
@@ -418,12 +569,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wBN-xs-UdS"/>
+                        <segue destination="YE7-xm-GaW" kind="relationship" relationship="rootViewController" id="a6B-sC-pKZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhd-ta-AAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="139"/>
+            <point key="canvasLocation" x="-1327" y="87"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="Mok-Ul-a0k">
@@ -632,4 +783,16 @@
         </scene>
     </scenes>
     <color key="tintColor" red="0.3575108306" green="0.48840632280000001" blue="0.72474470440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <image name="2" width="1280" height="508"/>
+        <image name="bag" width="222" height="230"/>
+        <image name="dress" width="214" height="237"/>
+        <image name="i13" width="491" height="393"/>
+        <image name="i16" width="508" height="400"/>
+        <image name="jackets" width="230" height="223"/>
+        <image name="launch" width="111" height="111"/>
+        <image name="pants" width="234" height="228"/>
+        <image name="sale" width="231" height="235"/>
+        <image name="shoes" width="228" height="228"/>
+    </resources>
 </document>
