@@ -237,17 +237,17 @@
                                 </connections>
                             </tableView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMX-Qu-IBD">
-                                <rect key="frame" x="0.0" y="234" width="375" height="433"/>
+                                <rect key="frame" x="0.0" y="234" width="375" height="691"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkM-WY-2ef">
-                                        <rect key="frame" x="0.0" y="5" width="375" height="381"/>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkM-WY-2ef">
+                                        <rect key="frame" x="-1" y="7" width="376" height="373"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSO-PS-hDE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collection List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSO-PS-hDE">
                                                 <rect key="frame" x="-14" y="32" width="400" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -262,11 +262,17 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-hH-RRw">
                                                 <rect key="frame" x="212" y="75" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LLq-uf-tS7"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pants" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-V8-yEI">
+                                                <rect key="frame" x="222" y="91" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sale" translatesAutoresizingMaskIntoConstraints="NO" id="hvC-Ee-1mG">
                                                 <rect key="frame" x="18" y="180" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -274,11 +280,17 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-pd-phd">
                                                 <rect key="frame" x="21" y="183" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vt-KZ-Y8u"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sale" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-DB-a13">
+                                                <rect key="frame" x="31" y="193" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jackets" translatesAutoresizingMaskIntoConstraints="NO" id="dli-4M-44t">
                                                 <rect key="frame" x="211" y="180" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -286,11 +298,17 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbk-hj-AfU">
                                                 <rect key="frame" x="212" y="182" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Zf-mv-dWr"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jackets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTK-oG-4f4">
+                                                <rect key="frame" x="222" y="193" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="DOt-bd-lOw">
                                                 <rect key="frame" x="18" y="281" width="135" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -298,11 +316,17 @@
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEF-vX-Cze">
                                                 <rect key="frame" x="18" y="281" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QI4-La-KYP"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shoes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onn-7I-hOX">
+                                                <rect key="frame" x="28" y="299" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dress" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-OF-uDU">
                                                 <rect key="frame" x="209" y="281" width="135" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -310,37 +334,49 @@
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egz-lf-je9">
                                                 <rect key="frame" x="212" y="282" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeN-bB-rq0"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dress" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGR-La-Fqd">
+                                                <rect key="frame" x="222" y="299" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tx-ZJ-BTB">
                                                 <rect key="frame" x="18" y="75" width="135" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="clickCollectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1gV-Uc-1bI"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bag" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-5b-4Gf">
+                                                <rect key="frame" x="31" y="91" width="108" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-rF-msK">
-                                        <rect key="frame" x="0.0" y="400" width="374" height="119"/>
+                                        <rect key="frame" x="-1" y="400" width="376" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="i13" translatesAutoresizingMaskIntoConstraints="NO" id="YER-K4-aVd">
-                                                <rect key="frame" x="0.0" y="2" width="375" height="114"/>
+                                                <rect key="frame" x="0.0" y="1" width="376" height="159"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" id="a8E-Pc-4zo">
-                                        <rect key="frame" x="0.0" y="500" width="375" height="98"/>
+                                        <rect key="frame" x="3" y="572" width="376" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="i16" translatesAutoresizingMaskIntoConstraints="NO" id="rgZ-kT-XWc">
-                                                <rect key="frame" x="-10" y="-2" width="384" height="99"/>
+                                                <rect key="frame" x="-4" y="-1" width="372" height="129"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -383,6 +419,12 @@
                         <outlet property="img6" destination="WAS-OF-uDU" id="WTA-Ph-ff6"/>
                         <outlet property="img7" destination="YER-K4-aVd" id="C7l-WO-GW0"/>
                         <outlet property="img8" destination="rgZ-kT-XWc" id="mxE-rH-FXH"/>
+                        <outlet property="lbl1" destination="WQ6-5b-4Gf" id="rQd-kX-I1v"/>
+                        <outlet property="lbl2" destination="ni4-V8-yEI" id="sMs-Ja-yST"/>
+                        <outlet property="lbl3" destination="gik-DB-a13" id="tYh-TT-G94"/>
+                        <outlet property="lbl4" destination="RTK-oG-4f4" id="RsE-0O-RIY"/>
+                        <outlet property="lbl5" destination="Onn-7I-hOX" id="u18-g3-jHJ"/>
+                        <outlet property="lbl6" destination="kGR-La-Fqd" id="DaO-PR-NNN"/>
                         <outlet property="scrolView" destination="xMX-Qu-IBD" id="UVv-yB-rw6"/>
                         <outlet property="tableView" destination="FJA-Xo-Ook" id="zuu-Zf-hAN"/>
                         <segue destination="AbI-Ns-2vc" kind="show" identifier="pushProducts" id="f9n-Ry-sCt"/>
@@ -390,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="129.98500749625188"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="129.08545727136433"/>
         </scene>
         <!--Cart Navigation Controller-->
         <scene sceneID="90s-gs-WtJ">
@@ -497,13 +539,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAP-TG-e7K"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Products" id="So2-vy-uwr">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="EP0-Vl-qVt">
+                            <connections>
+                                <action selector="back:" destination="AbI-Ns-2vc" id="3Px-sn-Cgv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="gJB-Hs-8wl" customClass="CartButton" customModule="Intempt_shop" customModuleProvider="target">
                             <connections>
                                 <action selector="cartAction:" destination="AbI-Ns-2vc" id="sLK-yS-Ky3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="l3f-iD-z0W" id="ZWP-72-Gmz"/>
                         <segue destination="FDf-If-Fqx" kind="show" identifier="pushProductDetails" id="2Ev-0t-uys"/>
@@ -785,14 +834,14 @@
     <color key="tintColor" red="0.3575108306" green="0.48840632280000001" blue="0.72474470440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="2" width="1280" height="508"/>
-        <image name="bag" width="222" height="230"/>
-        <image name="dress" width="214" height="237"/>
-        <image name="i13" width="491" height="393"/>
-        <image name="i16" width="508" height="400"/>
-        <image name="jackets" width="230" height="223"/>
+        <image name="bag" width="300" height="300"/>
+        <image name="dress" width="214" height="299"/>
+        <image name="i13" width="200" height="125"/>
+        <image name="i16" width="299" height="191"/>
+        <image name="jackets" width="360" height="360"/>
         <image name="launch" width="111" height="111"/>
-        <image name="pants" width="234" height="228"/>
-        <image name="sale" width="231" height="235"/>
-        <image name="shoes" width="228" height="228"/>
+        <image name="pants" width="214" height="299"/>
+        <image name="sale" width="360" height="360"/>
+        <image name="shoes" width="360" height="360"/>
     </resources>
 </document>

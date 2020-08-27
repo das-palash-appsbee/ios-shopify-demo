@@ -3,14 +3,17 @@
 
 import UIKit
 import MobileBuySDK
-
+protocol productDelegate: class {
+    func changeEvent(str : String)
+}
 class ProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: StorefrontCollectionView!
     
     var graph:      Graph!
     var collection: CollectionViewModel!
-    
+    var delegate : productDelegate?
+
     fileprivate let columns:  Int = 2
     fileprivate var products: PageableArray<ProductViewModel>!
     
@@ -19,7 +22,8 @@ class ProductsViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.setHidesBackButton(true, animated: true);
+
         self.configureCollectionView()
         
         Client.shared.fetchProducts(in: self.collection) { products in
@@ -30,6 +34,14 @@ class ProductsViewController: UIViewController {
         }
     }
     
+    @IBAction private func back(_ sender: UIBarButtonItem) {
+        self.delegate?.changeEvent(str: "1")
+        self.navigationController?.popViewController(animated: true)
+      }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated: true);
+
+    }
     private func configureCollectionView() {
         self.collectionView.paginationDelegate = self
         
