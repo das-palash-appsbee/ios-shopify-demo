@@ -95,6 +95,8 @@
 		9AFA3B7F1E6DC5FD0056C5AA /* Storyboard+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA3B7E1E6DC5FD0056C5AA /* Storyboard+ViewController.swift */; };
 		9AFA3B871E6DFF530056C5AA /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA3B861E6DFF530056C5AA /* SelectableCell.swift */; };
 		B55EA31343391B23E102A329 /* Pods_Storefront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD5BBCE97D317BCAF4870A8 /* Pods_Storefront.framework */; };
+		ED254AC124F7D15000CD6380 /* bag.png in Resources */ = {isa = PBXBuildFile; fileRef = ED254AC024F7D14F00CD6380 /* bag.png */; };
+		ED254AC324F7D2A300CD6380 /* pants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED254AC224F7D2A200CD6380 /* pants.jpg */; };
 		ED72A7F224EE916D00E7E6AC /* intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED72A7F024EE916400E7E6AC /* intempt.framework */; };
 		ED72A7F324EE916D00E7E6AC /* intempt.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = ED72A7F024EE916400E7E6AC /* intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED72A8CE24EEAF6F00E7E6AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED72A8CD24EEAF6F00E7E6AC /* ViewController.swift */; };
@@ -208,6 +210,8 @@
 		9AFA3B7E1E6DC5FD0056C5AA /* Storyboard+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+ViewController.swift"; sourceTree = "<group>"; };
 		9AFA3B861E6DFF530056C5AA /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		CDD8E2E2222567B6B6965866 /* Pods-Storefront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storefront.release.xcconfig"; path = "Target Support Files/Pods-Storefront/Pods-Storefront.release.xcconfig"; sourceTree = "<group>"; };
+		ED254AC024F7D14F00CD6380 /* bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bag.png; sourceTree = "<group>"; };
+		ED254AC224F7D2A200CD6380 /* pants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pants.jpg; sourceTree = "<group>"; };
 		ED72A7F024EE916400E7E6AC /* intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = intempt.framework; sourceTree = "<group>"; };
 		ED72A8CD24EEAF6F00E7E6AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -495,6 +499,8 @@
 		9ADAD4691E563091008AC561 /* Storefront */ = {
 			isa = PBXGroup;
 			children = (
+				ED254AC024F7D14F00CD6380 /* bag.png */,
+				ED254AC224F7D2A200CD6380 /* pants.jpg */,
 				9A52D3BB1F3F25C300C093C8 /* Storefront.entitlements */,
 				ED72A7F024EE916400E7E6AC /* intempt.framework */,
 				9ADAD46A1E563091008AC561 /* AppDelegate.swift */,
@@ -645,12 +651,14 @@
 			files = (
 				9ADAD4751E563091008AC561 /* LaunchScreen.storyboard in Resources */,
 				9ADAD4721E563091008AC561 /* Assets.xcassets in Resources */,
+				ED254AC124F7D15000CD6380 /* bag.png in Resources */,
 				9AAFAB8A1E60C17100864A17 /* ProductCell.xib in Resources */,
 				9A9FFF281E80172C00F6DFF7 /* ProductDetailsCell.xib in Resources */,
 				9ADAD4701E563091008AC561 /* Main.storyboard in Resources */,
 				9A9FFF231E800D9600F6DFF7 /* ProductHeaderCell.xib in Resources */,
 				9AAFAB841E60BF4400864A17 /* CollectionCell.xib in Resources */,
 				9AC583D01E81BF96005DB319 /* CartCell.xib in Resources */,
+				ED254AC324F7D2A300CD6380 /* pants.jpg in Resources */,
 				9A4EDDE721270F620071BA56 /* OrderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

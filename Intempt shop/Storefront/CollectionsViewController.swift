@@ -245,7 +245,7 @@ extension CollectionsViewController {
                   
                   if self.strFlag == ""
               {
-                  self.bannerImage.image = UIImage.init(named: "1.png")
+                  self.bannerImage.image = UIImage.init(named: "2.png")
                   self.img1.image = UIImage.init(named: "A1.png")
                              self.img2.image = UIImage.init(named: "A2.png")
                              self.img3.image = UIImage.init(named: "A3.png")
@@ -297,7 +297,7 @@ extension CollectionsViewController {
             
             if self.strFlag == ""
         {
-            self.bannerImage.image = UIImage.init(named: "1.png")
+            self.bannerImage.image = UIImage.init(named: "2.png")
             self.img1.image = UIImage.init(named: "A1.png")
                        self.img2.image = UIImage.init(named: "A2.png")
                        self.img3.image = UIImage.init(named: "A3.png")
@@ -305,8 +305,8 @@ extension CollectionsViewController {
             self.img5.image = UIImage.init(named: "A5.png")
             self.img6.image = UIImage.init(named: "dress1.png")
 
-                       self.img7.image = UIImage.init(named: "i12.png")
-                       self.img8.image = UIImage.init(named: "i15.png")
+                       self.img7.image = UIImage.init(named: "i13.png")
+                       self.img8.image = UIImage.init(named: "i16.png")
           
             self.lbl1.text = "A-line dresses"
             self.lbl2.text = "Mini dresses"
@@ -320,7 +320,7 @@ extension CollectionsViewController {
         }
         else
         {
-            self.bannerImage.image = UIImage.init(named: "2.png")
+            self.bannerImage.image = UIImage.init(named: "1.png")
 
               self.img1.image = UIImage.init(named: "bag.png")
                       self.img2.image = UIImage.init(named: "pants.png")
@@ -329,8 +329,8 @@ extension CollectionsViewController {
                                  self.img5.image = UIImage.init(named: "shoes.png")
             self.img6.image = UIImage.init(named: "dress.png")
 
-                      self.img7.image = UIImage.init(named: "i13.png")
-                      self.img8.image = UIImage.init(named: "i16.png")
+                      self.img7.image = UIImage.init(named: "i12.png")
+                      self.img8.image = UIImage.init(named: "i15.png")
 
             self.lbl1.text = "Accessories"
                        self.lbl2.text = "Pants"
