@@ -44,7 +44,7 @@ class CollectionsViewController: UIViewController,productDelegate {
                               self.lbl5.text = "Shoes"
                               self.lbl6.text = "Dresses"
         self.tableView.isHidden = true
-        self.scrolView.contentSize = CGSize (width: self.scrolView.frame.size.width, height: self.scrolView.frame.size.height + self.footerView.frame.origin.y + 30)
+        self.scrolView.contentSize = CGSize (width: self.scrolView.frame.size.width, height: self.footerView.frame.origin.y + self.footerView.frame.size.height+130)
        Intempt.tracking(withOrgId: "playground", andSourceId: "129646758011539456", andToken: "yohT_JeIv7YxjcKwfIamzrYoLi1FYzb8.QMDmUX5hynkQzYzfJQbCX5ozGeYDfHqC1rhKiB99uFPjln1Yte-QuYSQsi0h764j")
         self.configureTableView()
         self.fetchCollections()
