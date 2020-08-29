@@ -1,6 +1,0 @@
-framework module intempt {
-  umbrella header "intempt.h"
-
-  export *
-  module * { export * }
-}
