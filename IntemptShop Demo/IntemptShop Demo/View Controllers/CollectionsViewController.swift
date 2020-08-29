@@ -251,8 +251,8 @@ extension CollectionsViewController {
                   self.img5.image = UIImage.init(named: "A5.png")
                   self.img6.image = UIImage.init(named: "dress1.png")
 
-                             self.img7.image = UIImage.init(named: "i12.png")
-                             self.img8.image = UIImage.init(named: "i15.png")
+                             self.img7.image = UIImage.init(named: "i13.png")
+                             self.img8.image = UIImage.init(named: "i16.png")
                 
                   self.lbl1.text = "A-line dresses"
                   self.lbl2.text = "Mini dresses"
