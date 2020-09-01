@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9A78E9B40704D2259A673AE /* Pods_IntemptShop_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */; };
+		ED6C22AC24FE3D9700F4F740 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C22AB24FE3D9700F4F740 /* PushManager.swift */; };
 		EDFADEBF24FA2E2A0076A1FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */; };
 		EDFADEC624FA2E2C0076A1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDFADEC524FA2E2C0076A1FE /* Assets.xcassets */; };
 		EDFADEC924FA2E2C0076A1FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFADEC724FA2E2C0076A1FE /* LaunchScreen.storyboard */; };
@@ -105,6 +106,8 @@
 		234D9CE4B98630E783BE93B6 /* Pods-IntemptShop Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.debug.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntemptShop_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF391F1403B9E4D77C8758C /* Pods-IntemptShop Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.release.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.release.xcconfig"; sourceTree = "<group>"; };
+		ED6C22AA24FE3D7E00F4F740 /* IntemptShop Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "IntemptShop Demo.entitlements"; sourceTree = "<group>"; };
+		ED6C22AB24FE3D9700F4F740 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		EDFADEB924FA2E2A0076A1FE /* IntemptShop Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IntemptShop Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDFADEC524FA2E2C0076A1FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 		EDFADEBB24FA2E2A0076A1FE /* IntemptShop Demo */ = {
 			isa = PBXGroup;
 			children = (
+				ED6C22AB24FE3D9700F4F740 /* PushManager.swift */,
+				ED6C22AA24FE3D7E00F4F740 /* IntemptShop Demo.entitlements */,
 				EDFADED124FA2F1D0076A1FE /* bag.png */,
 				EDFADED024FA2F1C0076A1FE /* pants.jpg */,
 				EDFADED424FA2F270076A1FE /* AppDelegate.swift */,
@@ -626,6 +631,7 @@
 				EDFADF4324FA31BF0076A1FE /* AddressViewModel.swift in Sources */,
 				EDFADF2124FA31610076A1FE /* Fragment+DiscountApplication.swift in Sources */,
 				EDFADEEF24FA30510076A1FE /* StorefrontTableView.swift in Sources */,
+				ED6C22AC24FE3D9700F4F740 /* PushManager.swift in Sources */,
 				EDFADEFB24FA30AE0076A1FE /* String+HTML.swift in Sources */,
 				EDFADF6F24FA322F0076A1FE /* CustomerViewController.swift in Sources */,
 				EDFADEE824FA2FC70076A1FE /* SubtitleButton.swift in Sources */,
@@ -773,14 +779,18 @@
 			baseConfigurationReference = 234D9CE4B98630E783BE93B6 /* Pods-IntemptShop Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3K7YHSW33;
 				INFOPLIST_FILE = "IntemptShop Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.IntemptShop-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -791,14 +801,18 @@
 			baseConfigurationReference = CFF391F1403B9E4D77C8758C /* Pods-IntemptShop Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3K7YHSW33;
 				INFOPLIST_FILE = "IntemptShop Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tanay.app.IntemptShop-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
