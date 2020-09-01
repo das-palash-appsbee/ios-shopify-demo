@@ -129,15 +129,14 @@ extension CollectionsViewController {
             if self.strFlag == ""
               {
                     let collection         = self.collections.items[1]
-                    let productsController = self.productsViewControllerWith(collection)
-                    self.navigationController!.show(productsController, sender: self)
+                                                           self.productsList(collection: collection)
                 
                   }
                   else
                   {
                     let collection         = self.collections.items[8]
-                                      let productsController = self.productsViewControllerWith(collection)
-                                      self.navigationController!.show(productsController, sender: self)
+                                                                             self.productsList(collection: collection)
+
                                   
                     
                       }
@@ -148,15 +147,15 @@ extension CollectionsViewController {
                    if self.strFlag == ""
                      {
                            let collection         = self.collections.items[2]
-                           let productsController = self.productsViewControllerWith(collection)
-                           self.navigationController!.show(productsController, sender: self)
+                        self.productsList(collection: collection)
+
                        
                          }
                          else
                          {
                            let collection         = self.collections.items[8]
-                                             let productsController = self.productsViewControllerWith(collection)
-                                             self.navigationController!.show(productsController, sender: self)
+                                                                                    self.productsList(collection: collection)
+
                                          
                            
                              }
@@ -166,17 +165,14 @@ extension CollectionsViewController {
                           if self.strFlag == ""
                             {
                                   let collection         = self.collections.items[3]
-                                  let productsController = self.productsViewControllerWith(collection)
-                                  self.navigationController!.show(productsController, sender: self)
-                              
+                                  self.productsList(collection: collection)
+
                                 }
                                 else
                                 {
                                   let collection         = self.collections.items[7]
-                                                    let productsController = self.productsViewControllerWith(collection)
-                                                    self.navigationController!.show(productsController, sender: self)
-                                                
-                                  
+                                                                                            self.productsList(collection: collection)
+
                                     }
                       }
         
@@ -185,15 +181,15 @@ extension CollectionsViewController {
                                if self.strFlag == ""
                                  {
                                        let collection         = self.collections.items[10]
-                                       let productsController = self.productsViewControllerWith(collection)
-                                       self.navigationController!.show(productsController, sender: self)
+                                                                               self.productsList(collection: collection)
+
                                    
                                      }
                                      else
                                      {
                                        let collection         = self.collections.items[6]
-                                                         let productsController = self.productsViewControllerWith(collection)
-                                                         self.navigationController!.show(productsController, sender: self)
+                                                                                                self.productsList(collection: collection)
+
                                                      
                                        
                                          }
@@ -203,15 +199,15 @@ extension CollectionsViewController {
                                      if self.strFlag == ""
                                        {
                                              let collection         = self.collections.items[11]
-                                             let productsController = self.productsViewControllerWith(collection)
-                                             self.navigationController!.show(productsController, sender: self)
+                                                                                     self.productsList(collection: collection)
+
                                          
                                            }
                                            else
                                            {
                                              let collection         = self.collections.items[5]
-                                                               let productsController = self.productsViewControllerWith(collection)
-                                                               self.navigationController!.show(productsController, sender: self)
+                                                                                                    self.productsList(collection: collection)
+
                                                            
                                              
                                                }
@@ -222,22 +218,27 @@ extension CollectionsViewController {
                                      if self.strFlag == ""
                                        {
                                              let collection         = self.collections.items[8]
-                                             let productsController = self.productsViewControllerWith(collection)
-                                        productsController.delegate = self
-                                             self.navigationController!.show(productsController, sender: self)
+                                        self.productsList(collection: collection)
                                          
                                            }
                                            else
                                            {
                                              let collection         = self.collections.items[4]
-                                                               let productsController = self.productsViewControllerWith(collection)
-                                                               self.navigationController!.show(productsController, sender: self)
-                                                           
+                                                               self.productsList(collection: collection)
+
                                              
                                                }
                                  }
     }
 
+    func productsList(collection: CollectionViewModel)
+    {
+        
+        
+        let productsController = self.productsViewControllerWith(collection)
+                                                              //        self.navigationController!.show(productsController, sender: self)
+        self.navigationController?.pushViewController(productsController, animated: true)
+    }
     func changeEvent(str: String) {
           UIView.animate(withDuration: 1.0) {
                   
