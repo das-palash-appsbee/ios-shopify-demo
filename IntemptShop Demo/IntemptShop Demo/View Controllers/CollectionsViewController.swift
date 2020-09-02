@@ -128,14 +128,14 @@ extension CollectionsViewController {
         {
             if self.strFlag == ""
               {
-                    let collection         = self.collections.items[1]
-                                                           self.productsList(collection: collection)
+                    let collection = self.collections.items[1]
+                    self.productsList(collection: collection)
                 
                   }
                   else
                   {
-                    let collection         = self.collections.items[8]
-                                                                             self.productsList(collection: collection)
+                    let collection = self.collections.items[8]
+                    self.productsList(collection: collection)
 
                                   
                     
@@ -146,15 +146,15 @@ extension CollectionsViewController {
                {
                    if self.strFlag == ""
                      {
-                           let collection         = self.collections.items[2]
+                           let collection = self.collections.items[2]
                         self.productsList(collection: collection)
 
                        
                          }
                          else
                          {
-                           let collection         = self.collections.items[8]
-                                                                                    self.productsList(collection: collection)
+                           let collection = self.collections.items[8]
+                            self.productsList(collection: collection)
 
                                          
                            
@@ -164,14 +164,14 @@ extension CollectionsViewController {
                       {
                           if self.strFlag == ""
                             {
-                                  let collection         = self.collections.items[3]
+                                  let collection = self.collections.items[3]
                                   self.productsList(collection: collection)
 
                                 }
                                 else
                                 {
-                                  let collection         = self.collections.items[7]
-                                                                                            self.productsList(collection: collection)
+                                  let collection = self.collections.items[7]
+                                self.productsList(collection: collection)
 
                                     }
                       }
@@ -180,15 +180,15 @@ extension CollectionsViewController {
                            {
                                if self.strFlag == ""
                                  {
-                                       let collection         = self.collections.items[10]
-                                                                               self.productsList(collection: collection)
+                                       let collection = self.collections.items[10]
+                                    self.productsList(collection: collection)
 
                                    
                                      }
                                      else
                                      {
-                                       let collection         = self.collections.items[6]
-                                                                                                self.productsList(collection: collection)
+                                       let collection = self.collections.items[6]
+                                        self.productsList(collection: collection)
 
                                                      
                                        
@@ -198,15 +198,15 @@ extension CollectionsViewController {
                                  {
                                      if self.strFlag == ""
                                        {
-                                             let collection         = self.collections.items[11]
-                                                                                     self.productsList(collection: collection)
+                                             let collection = self.collections.items[11]
+                                            self.productsList(collection: collection)
 
                                          
                                            }
                                            else
                                            {
-                                             let collection         = self.collections.items[5]
-                                                                                                    self.productsList(collection: collection)
+                                             let collection = self.collections.items[5]
+                                                self.productsList(collection: collection)
 
                                                            
                                              
@@ -217,14 +217,15 @@ extension CollectionsViewController {
                                  {
                                      if self.strFlag == ""
                                        {
-                                             let collection         = self.collections.items[8]
-                                        self.productsList(collection: collection)
-                                         
+                                             let collection = self.collections.items[8]
+                                        let productsController = self.productsViewControllerWith(collection)
+                                        productsController.delegate = self
+                                        self.navigationController?.pushViewController(productsController, animated: true)
                                            }
                                            else
                                            {
-                                             let collection         = self.collections.items[4]
-                                                               self.productsList(collection: collection)
+                                             let collection = self.collections.items[4]
+                                                self.productsList(collection: collection)
 
                                              
                                                }
@@ -236,7 +237,6 @@ extension CollectionsViewController {
         
         
         let productsController = self.productsViewControllerWith(collection)
-                                                              //        self.navigationController!.show(productsController, sender: self)
         self.navigationController?.pushViewController(productsController, animated: true)
     }
     func changeEvent(str: String) {
