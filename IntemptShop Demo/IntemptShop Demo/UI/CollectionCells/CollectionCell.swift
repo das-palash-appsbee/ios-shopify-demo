@@ -42,7 +42,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
     
     private(set) var viewModel: CollectionViewModel?
     
-    // ----------------------------------
+    
     //  MARK: - Configure -
     //
     func configureFrom(_ viewModel: CollectionViewModel) {
@@ -64,7 +64,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Reuse -
     //
     override func prepareForReuse() {
@@ -73,7 +73,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
         self.collectionView.contentOffset = CGPoint.zero
     }
     
-    // ----------------------------------
+    
     //  MARK: - Awake -
     //
     override func awakeFromNib() {
@@ -83,7 +83,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
         self.collectionView.paginationDelegate  = self
     }
     
-    // ----------------------------------
+    
     //  MARK: - Touch Queries -
     //
     func productFor(_ touch: CGPoint) -> (model: ProductViewModel, sourceRect: CGRect)? {
@@ -110,7 +110,7 @@ class CollectionCell: UITableViewCell, ViewModelConfigurable {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PaginationDelegate -
 //
 extension CollectionCell: StorefrontCollectionViewDelegate {
@@ -133,7 +133,7 @@ extension CollectionCell: StorefrontCollectionViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UICollectionViewDataSource -
 //
 extension CollectionCell: UICollectionViewDataSource {
@@ -152,7 +152,7 @@ extension CollectionCell: UICollectionViewDataSource {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UICollectionViewDelegate -
 //
 extension CollectionCell: UICollectionViewDelegate {
@@ -163,7 +163,6 @@ extension CollectionCell: UICollectionViewDelegate {
     }
 }
 
-// -----------------------------------------------
 //  MARK: - UICollectionViewDelegateFlowLayout -
 //
 extension CollectionCell: UICollectionViewDelegateFlowLayout {

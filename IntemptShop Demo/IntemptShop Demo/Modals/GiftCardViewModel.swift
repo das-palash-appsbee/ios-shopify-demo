@@ -13,9 +13,9 @@ final class GiftCardViewModel: ViewModel {
     let amountUsed:     Decimal
     let lastCharacters: String
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model            = model
         

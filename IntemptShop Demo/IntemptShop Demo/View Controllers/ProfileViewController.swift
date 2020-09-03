@@ -4,19 +4,18 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet private weak var nameLabel:  UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
+    
     var customer: CustomerViewModel? {
         didSet {
             view.setNeedsLayout()
         }
     }
-    
-    @IBOutlet private weak var nameLabel:  UILabel!
-    @IBOutlet private weak var emailLabel: UILabel!
-    @IBOutlet private weak var phoneLabel: UILabel!
-    
-    // ----------------------------------
+
     //  MARK: - Layout -
-    //
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         

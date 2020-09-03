@@ -39,7 +39,7 @@ internal extension Graph {
         
         private let memoryCache = NSCache<NSString, CacheItem>()
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         init(shopName: String) {
@@ -65,7 +65,7 @@ internal extension Graph {
             self.createCacheDirectoryIfNeeded()
         }
         
-        // ----------------------------------
+        
         //  MARK: - Item Management -
         //
         func item(for hash: Hash) -> CacheItem? {
@@ -104,7 +104,7 @@ internal extension Graph {
             }
         }
         
-        // ----------------------------------
+        
         //  MARK: - Memory Cache -
         //
         private func setInMemory(_ cacheItem: CacheItem) {
@@ -119,7 +119,7 @@ internal extension Graph {
             self.memoryCache.removeObject(forKey: hash as NSString)
         }
         
-        // ----------------------------------
+        
         //  MARK: - File System Cache -
         //
         private static func cacheDirectory(for shopName: String) -> URL {

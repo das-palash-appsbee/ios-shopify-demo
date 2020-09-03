@@ -36,7 +36,7 @@ public struct PayCurrency {
     // A string representing an ISO Alpha-2 country code (eg: "US")
     public let countryCode:  String
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(currencyCode: String, countryCode: String) {

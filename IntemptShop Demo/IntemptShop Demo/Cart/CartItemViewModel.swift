@@ -16,7 +16,7 @@ final class CartItemViewModel: ViewModel {
         return "Quantity: \(model.quantity)"
     }
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     required init(from model: ModelType) {

@@ -68,7 +68,7 @@ public extension Graph {
             return self.endurance.canContinueFor(self.repeatCount)
         }
 
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         /// Creates a new retry handler representing a condition for retrying `Client` query or mutation operations.

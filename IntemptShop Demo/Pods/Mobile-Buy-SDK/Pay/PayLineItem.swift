@@ -33,7 +33,7 @@ public struct PayLineItem {
     public let price:    Decimal
     public let quantity: Int
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(price: Decimal, quantity: Int) {

@@ -11,9 +11,8 @@ final class ImageViewModel: ViewModel {
     
     let url:      URL
     
-    // ----------------------------------
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model    = model
         self.cursor   = model.cursor

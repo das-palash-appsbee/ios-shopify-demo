@@ -17,7 +17,7 @@ class StorefrontCollectionView: UICollectionView, Paginating {
     var paginationState:     PaginationState     = .ready
     var paginationDirection: PaginationDirection = .verical
     
-    // ----------------------------------
+    
     //  MARK: - Awake -
     //
     override func awakeFromNib() {
@@ -28,7 +28,7 @@ class StorefrontCollectionView: UICollectionView, Paginating {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func layoutSubviews() {

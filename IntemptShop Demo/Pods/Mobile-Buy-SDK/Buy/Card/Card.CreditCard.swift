@@ -50,7 +50,7 @@ public extension Card {
         /// The verification code displayed on the back or the front of the card
         public let verificationCode: String?
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         /// Creates and initializes a new credit card for submitting to the vaulting service.
@@ -75,7 +75,7 @@ public extension Card {
             self.verificationCode = verificationCode
         }
         
-        // ----------------------------------
+        
         //  MARK: - Dictionary -
         //
         internal func dictionary() -> [String: Any] {

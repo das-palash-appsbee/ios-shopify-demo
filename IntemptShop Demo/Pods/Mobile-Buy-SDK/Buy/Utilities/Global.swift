@@ -28,14 +28,14 @@ import Foundation
 
 class Global {
     
-    // ----------------------------------
+    
     //  MARK: - User Agent -
     //
     static var userAgent: String {
         return "Mobile Buy SDK iOS/\(self.frameworkVersion)/\(self.applicationIdentifier)"
     }
 
-    // ----------------------------------
+    
     //  MARK: - Versions -
     //
     static var frameworkVersion: String {
@@ -46,7 +46,7 @@ class Global {
         return self.applicationBundle.object(forInfoDictionaryKey: kCFBundleIdentifierKey as String) as? String ?? "com.unknown.bundle"
     }
     
-    // ----------------------------------
+    
     //  MARK: - Bundles -
     //
     private static var frameworkBundle: Bundle {

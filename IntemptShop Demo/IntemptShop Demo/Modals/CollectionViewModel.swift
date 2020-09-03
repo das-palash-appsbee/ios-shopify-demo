@@ -15,9 +15,9 @@ final class CollectionViewModel: ViewModel {
     let imageURL:    URL?
     var products:    PageableArray<ProductViewModel>
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model       = model
         self.cursor      = model.cursor

@@ -16,9 +16,9 @@ final class ProductViewModel: ViewModel {
     let images:   PageableArray<ImageViewModel>
     let variants: PageableArray<VariantViewModel>
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+    
     required init(from model: ModelType) {
         self.model    = model
         self.cursor   = model.cursor

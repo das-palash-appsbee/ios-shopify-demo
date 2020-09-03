@@ -40,7 +40,7 @@ final class CheckoutViewModel: ViewModel {
     
     let shippingDiscountAllocations: [DiscountAllocationViewModel]
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     required init(from model: ModelType) {

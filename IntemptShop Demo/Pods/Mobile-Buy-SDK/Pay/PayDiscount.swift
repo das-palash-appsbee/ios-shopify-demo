@@ -37,7 +37,7 @@ public struct PayDiscount {
     public let code:   String
     public let amount: Decimal
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(code: String, amount: Decimal) {

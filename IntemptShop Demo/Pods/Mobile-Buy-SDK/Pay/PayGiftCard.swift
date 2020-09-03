@@ -42,7 +42,7 @@ public struct PayGiftCard {
     /// The last characters of the Gift Card code
     public let lastCharacters: String
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(id: String, balance: Decimal, amount: Decimal, lastCharacters: String) {

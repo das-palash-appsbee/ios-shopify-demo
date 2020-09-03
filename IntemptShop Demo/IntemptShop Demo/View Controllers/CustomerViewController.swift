@@ -9,33 +9,18 @@ protocol CustomerControllerDelegate: class {
 
 class CustomerViewController: ParallaxViewController {
     
+    @IBOutlet private weak var tableView: StorefrontTableView!
+    
     weak var delegate: CustomerControllerDelegate?
     
     private var profileViewController: ProfileViewController!
-    
-    @IBOutlet private weak var tableView: StorefrontTableView!
     
     private var customer: CustomerViewModel!
     private var orders: PageableArray<OrderViewModel>!
     private var token: String!
     
-    // ----------------------------------
-    //  MARK: - Segue -
-    //
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        switch segue.identifier! {
-        case "ProfileViewController":
-            self.profileViewController = (segue.destination as! ProfileViewController)
-        default:
-            break
-        }
-    }
+    //  MARK: - View Lifecyle -
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,24 +32,38 @@ class CustomerViewController: ParallaxViewController {
         self.fetchOrders()
     }
     
+    
+    //  MARK: - Segue -
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.identifier! {
+        case "ProfileViewController":
+            self.profileViewController = (segue.destination as! ProfileViewController)
+        default:
+            break
+        }
+    }
+    
     private func configureTableView() {
         self.tableView.paginationDelegate = self
     }
     
     private func configureParallax() {
-        self.layout       = .headerAbove
+        self.layout = .headerAbove
         self.headerHeight = self.view.bounds.width * 0.3
-        self.multiplier   = 0.0
+        self.multiplier = 0.0
     }
     
-    // ----------------------------------
+
     //  MARK: - Fetching -
-    //
+
     fileprivate func fetchOrders(after cursor: String? = nil) {
         Client.shared.fetchCustomerAndOrders(after: cursor, accessToken: self.token) { container in
             if let container = container {
                 self.customer = container.customer
-                self.orders   = container.orders
+                self.orders = container.orders
                 self.tableView.reloadData()
                 
                 self.profileViewController.customer = container.customer
@@ -73,9 +72,9 @@ class CustomerViewController: ParallaxViewController {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UI Actions -
-//
+
 extension CustomerViewController {
     @IBAction func cancelAction(_ sender: Any) {
         self.delegate?.customerControllerDidCancel(self)
@@ -86,9 +85,9 @@ extension CustomerViewController {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - StorefrontTableViewDelegate -
-//
+
 extension CustomerViewController: StorefrontTableViewDelegate {
     
     func tableViewShouldBeginPaging(_ table: StorefrontTableView) -> Bool {
@@ -116,9 +115,9 @@ extension CustomerViewController: StorefrontTableViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UITableViewDelegate -
-//
+
 extension CustomerViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -126,14 +125,11 @@ extension CustomerViewController: UITableViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UICollectionViewDataSource -
-//
+
 extension CustomerViewController: UITableViewDataSource {
     
-    // ----------------------------------
-    //  MARK: - Data -
-    //
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.orders?.items.count ?? 0
     }

@@ -13,9 +13,9 @@ final class DiscountAllocationViewModel: ViewModel {
     let currencyCode: String
     let application:  DiscountApplication
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+    
     required init(from model: ModelType) {
         self.model        = model
         

@@ -49,7 +49,7 @@ public struct PayCheckout {
     public let totalTax:         Decimal
     public let paymentDue:       Decimal
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(id: String, lineItems: [PayLineItem], giftCards: [PayGiftCard]?, discount: PayDiscount?, shippingDiscount: PayDiscount?, shippingAddress: PayAddress?, shippingRate: PayShippingRate?, currencyCode: String, subtotalPrice: Decimal, needsShipping: Bool, totalTax: Decimal, paymentDue: Decimal) {
@@ -73,7 +73,7 @@ public struct PayCheckout {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PassKits -
 //
 internal extension PayCheckout {

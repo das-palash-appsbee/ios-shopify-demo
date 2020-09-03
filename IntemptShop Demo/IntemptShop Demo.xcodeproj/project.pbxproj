@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3542B424FFC1270023C271 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3542B324FFC1270023C271 /* Constants.swift */; };
 		B9A78E9B40704D2259A673AE /* Pods_IntemptShop_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */; };
 		ED6C22AC24FE3D9700F4F740 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C22AB24FE3D9700F4F740 /* PushManager.swift */; };
 		EDFADEBF24FA2E2A0076A1FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */; };
@@ -103,6 +104,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C3542B324FFC1270023C271 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		234D9CE4B98630E783BE93B6 /* Pods-IntemptShop Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.debug.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntemptShop_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF391F1403B9E4D77C8758C /* Pods-IntemptShop Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.release.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +217,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C3542A624FFA9FD0023C271 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDFADED124FA2F1D0076A1FE /* bag.png */,
+				EDFADED024FA2F1C0076A1FE /* pants.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C3542A724FFAA2F0023C271 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				EDFADF7624FA32530076A1FE /* CartCell.swift */,
+				EDFADF7424FA32530076A1FE /* CartCell.xib */,
+				EDFADF7A24FA32530076A1FE /* ProductDetailsCell.swift */,
+				EDFADF7B24FA32530076A1FE /* ProductDetailsCell.xib */,
+				EDFADF7224FA32530076A1FE /* ProductHeaderCell.swift */,
+				EDFADF7824FA32530076A1FE /* ProductHeaderCell.xib */,
+				EDFADF5E24FA322E0076A1FE /* OrderCell.swift */,
+				EDFADF5C24FA322E0076A1FE /* OrderCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		0C3542A824FFAA4C0023C271 /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				EDFADF5824FA322E0076A1FE /* CollectionCell.swift */,
+				EDFADF5724FA322E0076A1FE /* CollectionCell.xib */,
+				EDFADF5D24FA322E0076A1FE /* ProductCell.swift */,
+				EDFADF5924FA322E0076A1FE /* ProductCell.xib */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		0C3542A924FFB0330023C271 /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C22AB24FE3D9700F4F740 /* PushManager.swift */,
+			);
+			path = PushNotifications;
+			sourceTree = "<group>";
+		};
+		0C3542B224FFC10C0023C271 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0C3542B324FFC1270023C271 /* Constants.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		2ACB48939867ED3132F71D6C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,10 +306,7 @@
 		EDFADEBB24FA2E2A0076A1FE /* IntemptShop Demo */ = {
 			isa = PBXGroup;
 			children = (
-				ED6C22AB24FE3D9700F4F740 /* PushManager.swift */,
 				ED6C22AA24FE3D7E00F4F740 /* IntemptShop Demo.entitlements */,
-				EDFADED124FA2F1D0076A1FE /* bag.png */,
-				EDFADED024FA2F1C0076A1FE /* pants.jpg */,
 				EDFADED424FA2F270076A1FE /* AppDelegate.swift */,
 				EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */,
 				EDFADF5624FA31E40076A1FE /* View Controllers */,
@@ -266,7 +316,10 @@
 				EDFADEFD24FA30BC0076A1FE /* Protocols */,
 				EDFADEF224FA30890076A1FE /* Extensions */,
 				EDFADED924FA2F800076A1FE /* UI */,
+				0C3542B224FFC10C0023C271 /* Helper */,
 				EDFADED624FA2F580076A1FE /* Formatters */,
+				0C3542A924FFB0330023C271 /* PushNotifications */,
+				0C3542A624FFA9FD0023C271 /* Resources */,
 				EDFADEC524FA2E2C0076A1FE /* Assets.xcassets */,
 				EDFADF8924FA32B40076A1FE /* Main.storyboard */,
 				EDFADEC724FA2E2C0076A1FE /* LaunchScreen.storyboard */,
@@ -286,9 +339,11 @@
 		EDFADED924FA2F800076A1FE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EDFADEDB24FA2F9F0076A1FE /* Color.swift */,
+				0C3542A824FFAA4C0023C271 /* CollectionCells */,
+				0C3542A724FFAA2F0023C271 /* TableCells */,
 				EDFADEEB24FA30300076A1FE /* Scroll Views */,
 				EDFADEE424FA2FAE0076A1FE /* Buttons */,
+				EDFADEDB24FA2F9F0076A1FE /* Color.swift */,
 				EDFADEDA24FA2F9F0076A1FE /* ImageViewController.swift */,
 				EDFADEDE24FA2F9F0076A1FE /* ParallaxViewController.swift */,
 				EDFADEDC24FA2F9F0076A1FE /* SelectableCell.swift */,
@@ -355,8 +410,8 @@
 			children = (
 				EDFADF0E24FA31220076A1FE /* Client.swift */,
 				EDFADF1224FA312E0076A1FE /* GraphQL+Serializable.swift */,
-				EDFADF1424FA31390076A1FE /* Fragments */,
 				EDFADF0F24FA31220076A1FE /* ClientQuery.swift */,
+				EDFADF1424FA31390076A1FE /* Fragments */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -410,31 +465,19 @@
 		EDFADF5624FA31E40076A1FE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EDFADF5B24FA322E0076A1FE /* ViewController.swift */,
+				EDFADF6024FA322E0076A1FE /* LoginViewController.swift */,
 				EDFADF5A24FA322E0076A1FE /* AccountController.swift */,
-				EDFADF5824FA322E0076A1FE /* CollectionCell.swift */,
-				EDFADF5724FA322E0076A1FE /* CollectionCell.xib */,
 				EDFADF5F24FA322E0076A1FE /* CollectionsViewController.swift */,
-				EDFADF7624FA32530076A1FE /* CartCell.swift */,
-				EDFADF7424FA32530076A1FE /* CartCell.xib */,
+				EDFADF7524FA32530076A1FE /* ProductDetailsViewController.swift */,
+				EDFADF7724FA32530076A1FE /* ProductsViewController.swift */,
 				EDFADF7C24FA32530076A1FE /* CartNavigationController.swift */,
 				EDFADF7124FA32530076A1FE /* CartViewController.swift */,
-				EDFADF7A24FA32530076A1FE /* ProductDetailsCell.swift */,
-				EDFADF7B24FA32530076A1FE /* ProductDetailsCell.xib */,
-				EDFADF7524FA32530076A1FE /* ProductDetailsViewController.swift */,
-				EDFADF7224FA32530076A1FE /* ProductHeaderCell.swift */,
-				EDFADF7824FA32530076A1FE /* ProductHeaderCell.xib */,
-				EDFADF7724FA32530076A1FE /* ProductsViewController.swift */,
 				EDFADF7924FA32530076A1FE /* TotalsViewController.swift */,
 				EDFADF7324FA32530076A1FE /* WebViewController.swift */,
 				EDFADF6124FA322E0076A1FE /* CustomerCoordinator.swift */,
 				EDFADF6224FA322F0076A1FE /* CustomerViewController.swift */,
-				EDFADF6024FA322E0076A1FE /* LoginViewController.swift */,
-				EDFADF5E24FA322E0076A1FE /* OrderCell.swift */,
-				EDFADF5C24FA322E0076A1FE /* OrderCell.xib */,
-				EDFADF5D24FA322E0076A1FE /* ProductCell.swift */,
-				EDFADF5924FA322E0076A1FE /* ProductCell.xib */,
 				EDFADF6324FA322F0076A1FE /* ProfileViewController.swift */,
-				EDFADF5B24FA322E0076A1FE /* ViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -469,7 +512,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Tanay Bhattacharjee";
+				ORGANIZATIONNAME = Intempt;
 				TargetAttributes = {
 					EDFADEB824FA2E2A0076A1FE = {
 						CreatedOnToolsVersion = 11.5;
@@ -627,6 +670,7 @@
 				EDFADF4624FA31BF0076A1FE /* DiscountAllocationViewModel.swift in Sources */,
 				EDFADF4724FA31BF0076A1FE /* AddressViewModel+PayAddress.swift in Sources */,
 				EDFADF6E24FA322F0076A1FE /* CustomerCoordinator.swift in Sources */,
+				0C3542B424FFC1270023C271 /* Constants.swift in Sources */,
 				EDFADF4424FA31BF0076A1FE /* VariantViewModel.swift in Sources */,
 				EDFADF4324FA31BF0076A1FE /* AddressViewModel.swift in Sources */,
 				EDFADF2124FA31610076A1FE /* Fragment+DiscountApplication.swift in Sources */,
@@ -710,7 +754,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -764,7 +808,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

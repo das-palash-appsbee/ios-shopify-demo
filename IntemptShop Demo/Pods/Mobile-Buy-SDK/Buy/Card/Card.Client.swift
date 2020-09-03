@@ -39,7 +39,7 @@ public extension Card {
         /// The `URLSession` backing all `Client` network operations. You may provide your own session when initializing a new `Client`.
         public let session: URLSession
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         /// Creates and initialized a new `Client`.
@@ -51,7 +51,7 @@ public extension Card {
             self.session = session
         }
         
-        // ----------------------------------
+        
         //  MARK: - Request Generation -
         //
         func requestFor(_ creditCard: CreditCard, to url: URL) -> URLRequest {
@@ -67,7 +67,7 @@ public extension Card {
             return request
         }
         
-        // ----------------------------------
+        
         //  MARK: - Vaulting -
         //
         /// Stores the raw credit data on Shopify's card server and exchanges it for a token 

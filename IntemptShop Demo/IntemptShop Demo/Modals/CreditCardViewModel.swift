@@ -20,9 +20,9 @@ final class CreditCardViewModel: ViewModel {
     let expYear:      Int?
     let brand:        String?
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+    
     required init(from model: ModelType) {
         self.model        = model
         

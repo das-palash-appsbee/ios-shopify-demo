@@ -9,9 +9,9 @@ class WebViewController: UIViewController {
     
     private let webView = WKWebView(frame: .zero)
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     init(url: URL, accessToken: String?) {
         self.url         = url
         self.accessToken = accessToken
@@ -39,16 +39,15 @@ class WebViewController: UIViewController {
         self.load(url: self.url)
     }
     
-    // ----------------------------------
+
     //  MARK: - Request -
-    //
+
     private func load(url: URL) {
         var request = URLRequest(url: self.url)
         
         if let accessToken = self.accessToken {
             request.setValue(accessToken, forHTTPHeaderField: "X-Shopify-Customer-Access-Token")
         }
-        
         self.webView.load(request)
     }
 }

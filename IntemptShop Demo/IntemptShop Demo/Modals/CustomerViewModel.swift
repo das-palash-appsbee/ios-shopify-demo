@@ -16,12 +16,11 @@ final class CustomerViewModel: ViewModel {
     let email:       String?
     let updatedAt:   Date
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model       = model
-        
         self.id          = model.id.rawValue
         self.displayName = model.displayName
         self.firstName   = model.firstName

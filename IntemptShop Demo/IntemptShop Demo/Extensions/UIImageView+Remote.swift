@@ -55,7 +55,7 @@ extension UIImageView {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Image Cache -
 //
 private class ImageCache: NSCache<NSString, UIImage> {

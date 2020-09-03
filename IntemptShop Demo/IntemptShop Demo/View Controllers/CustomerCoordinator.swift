@@ -6,9 +6,8 @@ class CustomerCoordinator: UIViewController {
     
     private let hostController = UINavigationController(navigationBarClass: UINavigationBar.self, toolbarClass: UIToolbar.self)
     
-    // ----------------------------------
-    //  MARK: - View -
-    //
+    //  MARK: - View Lifecycle -
+
     override func loadView() {
         super.loadView()
         
@@ -38,9 +37,9 @@ class CustomerCoordinator: UIViewController {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - CustomerControllerDelegate -
-//
+
 extension CustomerCoordinator: CustomerControllerDelegate {
     func customerControllerDidCancel(_ customerController: CustomerViewController) {
         self.dismiss(animated: true, completion: nil)
@@ -60,9 +59,9 @@ extension CustomerCoordinator: CustomerControllerDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - LoginControllerDelegate -
-//
+
 extension CustomerCoordinator: LoginControllerDelegate {
     
     func loginControllerDidCancel(_ loginController: LoginViewController) {
@@ -74,10 +73,9 @@ extension CustomerCoordinator: LoginControllerDelegate {
             if let accessToken = accessToken {
                 AccountController.shared.save(accessToken: accessToken)
                 self.showOrders(animated: true)
-            } else {
-                let alert = UIAlertController(title: "Login Error", message: "Failed to login a customer with this email and password. Please check your credentials and try again.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                showAlert(title: AppTitle, message: "Failed to login a customer with this email and password. Please check your credentials and try again.", vc: self)
             }
         }
     }

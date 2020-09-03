@@ -14,9 +14,9 @@ final class OrderViewModel: ViewModel {
     let email:       String?
     let totalPrice:  Decimal
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model       = model
         self.cursor      = model.cursor

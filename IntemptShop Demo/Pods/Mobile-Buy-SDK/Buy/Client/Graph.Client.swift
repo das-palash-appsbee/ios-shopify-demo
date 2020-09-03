@@ -70,7 +70,7 @@ extension Graph {
         internal let apiURL:  URL
         internal let headers: [String : String]
 
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         /// Creates and initialized a new `Client`.
@@ -107,7 +107,7 @@ extension Graph {
             return components.url!
         }
 
-        // ----------------------------------
+        
         //  MARK: - Queries -
         //
         /// Performs a GraphQL `query` request.
@@ -136,7 +136,7 @@ extension Graph {
             )
         }
 
-        // ----------------------------------
+        
         //  MARK: - Mutations -
         //
         /// Performs a GraphQL `mutation` request.
@@ -164,7 +164,7 @@ extension Graph {
             )
         }
 
-        // ----------------------------------
+        
         //  MARK: - Request Management -
         //
         private func graphRequestTask<Q: GraphQL.AbstractQuery, R: GraphQL.AbstractResponse>(query: Q, cachePolicy: CachePolicy, retryHandler: RetryHandler<R>? = nil, completionHandler: @escaping (R?, QueryError?) -> Void) -> Task {

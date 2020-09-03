@@ -11,7 +11,7 @@ protocol Serializable {
     func serialize() -> SerializedRepresentation
 }
 
-// ----------------------------------
+
 //  MARK: - Collection Conveniences -
 //
 extension Array where Element: Serializable {

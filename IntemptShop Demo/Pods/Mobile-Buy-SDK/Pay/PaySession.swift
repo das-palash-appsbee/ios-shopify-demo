@@ -135,7 +135,7 @@ public class PaySession: NSObject {
 
     private let controllerType: PKPaymentAuthorizationController.Type
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     /// An instance of `PaySession` represents a single transaction using Apple Pay.
@@ -163,7 +163,7 @@ public class PaySession: NSObject {
         self.init(shopName: "TOTAL", checkout: checkout, currency: currency, merchantID: merchantID, controllerType: controllerType)
     }
 
-    // ----------------------------------
+    
     //  MARK: - Begin Checkout -
     //
     /// Invoking `authorize()` will create a payment request and present the
@@ -177,7 +177,7 @@ public class PaySession: NSObject {
         controller.present(completion: nil)
     }
 
-    // ----------------------------------
+    
     //  MARK: - Payment Creation -
     //
     func paymentRequestUsing(_ checkout: PayCheckout, currency: PayCurrency, merchantID: String) -> PKPaymentRequest {
@@ -195,13 +195,13 @@ public class PaySession: NSObject {
     }
 }
 
-// ------------------------------------------------------
+
 //  MARK: - PKPaymentAuthorizationControllerDelegate -
 //
 @available(iOS 10.0, *)
 extension PaySession: PKPaymentAuthorizationControllerDelegate {
 
-    // -------------------------------------------------------
+
     //  MARK: - PKPaymentAuthorizationControllerDelegate -
     //
     @available(iOS 11.0, watchOS 4.0, *)
@@ -220,7 +220,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
             shippingRate = self.shippingRates.shippingRateFor(payment.shippingMethod!)
         }
 
-        /* -----------------------------------------------
+        /* -------
          ** The PKPayment object provides `billingContact`
          ** and `shippingContact` only when required fields
          ** are set on the payment request, which they are.
@@ -264,7 +264,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
 
         let payPostalAddress = PayPostalAddress(with: postalAddress)
         
-        /* ---------------------------------
+        /* -------------
          ** If the checkout doesn't require
          ** shipping, we still need to notify
          ** the delegate about the shipping
@@ -286,7 +286,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
             return
         }
 
-        /* ---------------------------------
+        /* -------------
          ** Request the delegate to provide
          ** shipping rates for the given
          ** postal address. The partial info
@@ -294,7 +294,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
          */
         self.delegate?.paySession(self, didRequestShippingRatesFor: payPostalAddress, checkout: self.checkout, provide: { updatedCheckout, shippingRates in
 
-            /* ---------------------------------
+            /* -------------
              ** The delegate has an opportunity
              ** to return empty shipping rates
              ** which indicates invalid or incomplete
@@ -308,7 +308,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
             self.checkout      = updatedCheckout
             self.shippingRates = shippingRates
 
-            /* -----------------------------------------
+            /* -
              ** Give the delegate a chance to update the
              ** checkout with the first shipping rate as
              ** the default. Apple Pay selects it but
@@ -339,7 +339,7 @@ extension PaySession: PKPaymentAuthorizationControllerDelegate {
     public func paymentAuthorizationController(_ controller: PKPaymentAuthorizationController, didSelectShippingMethod shippingMethod: PKShippingMethod, completion: @escaping (PKPaymentAuthorizationStatus, [PKPaymentSummaryItem]) -> Void) {
         Log("Selecting delivery method...")
         
-        /* --------------------------------------
+        /* ------------------
          ** This should never fail since shipping
          ** methods are mapped 1:1 from shipping
          ** rates.

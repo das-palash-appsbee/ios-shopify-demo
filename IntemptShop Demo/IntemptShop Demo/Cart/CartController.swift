@@ -25,21 +25,26 @@ class CartController {
         }
     }
     
-    private let ioQueue    = DispatchQueue(label: "com.storefront.writeQueue")
+    private let ioQueue = DispatchQueue(label: "com.storefront.writeQueue")
     private var needsFlush = false
     private var cartURL: URL = {
+        
+        if(Shopify.merchantID == "Your Merchant ID") {
+            //assertionFailure("Please configure your Shopify credentials.")
+            //print("Please configure your Shopify credentials.")
+        }
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let documentsURL  = URL(fileURLWithPath: documentsPath)
-        let cartURL       = documentsURL.appendingPathComponent("\(Client.shopDomain).json")
+        let documentsURL = URL(fileURLWithPath: documentsPath)
+        let cartURL = documentsURL.appendingPathComponent("\(Shopify.shopDomain).json")
         
         print("Cart URL: \(cartURL)")
         
         return cartURL
     }()
     
-    // ----------------------------------
     //  MARK: - Init -
-    //
+    
     private init() {
         self.readCart { items in
             if let items = items {
@@ -50,17 +55,17 @@ class CartController {
         }
     }
     
-    // ----------------------------------
+
     //  MARK: - Notifications -
-    //
+    
     private func postItemsChangedNotification() {
         let notification = Notification(name: Notification.Name.CartControllerItemsDidChange)
         NotificationQueue.default.enqueue(notification, postingStyle: .asap)
     }
     
-    // ----------------------------------
+
     //  MARK: - IO Management -
-    //
+    
     private func setNeedsFlush() {
         if !self.needsFlush {
             self.needsFlush = true
@@ -91,7 +96,7 @@ class CartController {
     private func readCart(completion: @escaping ([CartItem]?) -> Void) {
         self.ioQueue.async {
             do {
-                let data            = try Data(contentsOf: self.cartURL)
+                let data = try Data(contentsOf: self.cartURL)
                 let serializedItems = try JSONSerialization.jsonObject(with: data, options: [])
                 
                 let cartItems = [CartItem].deserialize(from: serializedItems as! [SerializedRepresentation])
@@ -108,17 +113,17 @@ class CartController {
         }
     }
     
-    // ----------------------------------
+
     //  MARK: - State Changes -
-    //
+
     private func itemsChanged() {
         self.setNeedsFlush()
         self.postItemsChangedNotification()
     }
     
-    // ----------------------------------
+
     //  MARK: - Item Management -
-    //
+    
     func updateQuantity(_ quantity: Int, at index: Int) -> Bool {
         let existingItem = self.items[index]
         

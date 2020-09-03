@@ -16,9 +16,9 @@ final class PaymentViewModel: ViewModel {
     let amount:     Decimal
     let error:      String?
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model      = model
         

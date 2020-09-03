@@ -12,24 +12,9 @@ class CartViewController: ParallaxViewController {
     
     fileprivate var paySession: PaySession?
     
-    // ----------------------------------
-    //  MARK: - Segue -
-    //
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        switch segue.identifier! {
-        case "TotalsViewController":
-            self.totalsViewController          = (segue.destination as! TotalsViewController)
-            self.totalsViewController.delegate = self
-        default:
-            break
-        }
-    }
+
+    //  MARK: - View Lifecyle -
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +28,21 @@ class CartViewController: ParallaxViewController {
     
     deinit {
         self.unregisterNotifications()
+    }
+    
+    
+    //  MARK: - Segue -
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.identifier! {
+        case "TotalsViewController":
+            self.totalsViewController = (segue.destination as! TotalsViewController)
+            self.totalsViewController.delegate = self
+        default:
+            break
+        }
     }
     
     private func configureParallax() {
@@ -61,9 +61,9 @@ class CartViewController: ParallaxViewController {
         }
     }
     
-    // ----------------------------------
+
     //  MARK: - Notifications -
-    //
+
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(cartControllerItemsDidChange(_:)), name: Notification.Name.CartControllerItemsDidChange, object: nil)
     }
@@ -76,17 +76,17 @@ class CartViewController: ParallaxViewController {
         self.updateSubtotal()
     }
     
-    // ----------------------------------
+
     //  MARK: - Update -
-    //
+
     func updateSubtotal() {
         self.totalsViewController.subtotal  = CartController.shared.subtotal
         self.totalsViewController.itemCount = CartController.shared.itemCount
     }
     
-    // ----------------------------------
+
     //  MARK: - Actions -
-    //
+
     func openSafariFor(_ checkout: CheckoutViewModel) {
         let webController = WebViewController(url: checkout.webURL, accessToken: AccountController.shared.accessToken)
         webController.navigationItem.title = "Checkout"
@@ -99,18 +99,18 @@ class CartViewController: ParallaxViewController {
             shopName: shopName,
             checkout: checkout.payCheckout,
             currency: payCurrency,
-            merchantID: Client.merchantID
+            merchantID: Shopify.merchantID
         )
         
         paySession.delegate = self
-        self.paySession     = paySession
+        self.paySession = paySession
         
         paySession.authorize()
     }
     
-    // ----------------------------------
+
     //  MARK: - Discount Codes -
-    //
+
     func promptForCodes(completion: @escaping ((discountCode: String?, giftCard: String?)) -> Void) {
         let alert = UIAlertController(title: "Do you have a discount code of gift cards?", message: "Any valid discount code or gift card can be applied to your checkout.", preferredStyle: .alert)
         
@@ -142,29 +142,16 @@ class CartViewController: ParallaxViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // ----------------------------------
-    //  MARK: - View Controllers -
-    //
-    func productDetailsViewControllerWith(_ product: ProductViewModel) -> ProductDetailsViewController {
-        let controller: ProductDetailsViewController = self.storyboard!.instantiateViewController()
-        controller.product = product
-        return controller
-    }
-}
-
-// ----------------------------------
-//  MARK: - Actions -
-//
-extension CartViewController {
+    //  MARK: - Actions -
     
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-// ----------------------------------
+
 //  MARK: - TotalsControllerDelegate -
-//
+
 extension CartViewController: TotalsControllerDelegate {
     
     func totalsController(_ totalsController: TotalsViewController, didRequestPaymentWith type: PaymentType) {
@@ -262,9 +249,9 @@ extension CartViewController: TotalsControllerDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PaySessionDelegate -
-//
+
 extension CartViewController: PaySessionDelegate {
     
     func paySession(_ paySession: PaySession, didRequestShippingRatesFor address: PayPostalAddress, checkout: PayCheckout, provide: @escaping  (PayCheckout?, [PayShippingRate]) -> Void) {
@@ -355,9 +342,9 @@ extension CartViewController: PaySessionDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UIViewControllerPreviewingDelegate -
-//
+
 extension CartViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -367,10 +354,10 @@ extension CartViewController: UIViewControllerPreviewingDelegate {
             
             previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             
-            let cell    = tableView.cellForRow(at: indexPath) as! CartCell
+            let cell = tableView.cellForRow(at: indexPath) as! CartCell
             let product = cell.viewModel!.model.product
             
-            return self.productDetailsViewControllerWith(product)
+            return productDetailsViewControllerWith(product)
         }
         return nil
     }
@@ -380,9 +367,9 @@ extension CartViewController: UIViewControllerPreviewingDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - CartCellDelegate -
-//
+
 extension CartViewController: CartCellDelegate {
     
     func cartCell(_ cell: CartCell, didUpdateQuantity quantity: Int) {
@@ -390,7 +377,6 @@ extension CartViewController: CartCellDelegate {
             
             let didUpdate = CartController.shared.updateQuantity(quantity, at: indexPath.row)
             if didUpdate {
-                
                 self.tableView.beginUpdates()
                 self.tableView.reloadRows(at: [indexPath], with: .none)
                 self.tableView.endUpdates()
@@ -399,20 +385,17 @@ extension CartViewController: CartCellDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UITableViewDataSource -
-//
+
 extension CartViewController: UITableViewDataSource {
-    
-    // ----------------------------------
-    //  MARK: - Data -
-    //
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CartController.shared.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell     = tableView.dequeueReusableCell(withIdentifier: CartCell.className, for: indexPath) as! CartCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CartCell.className, for: indexPath) as! CartCell
         let cartItem = CartController.shared.items[indexPath.row]
         
         cell.delegate = self
@@ -442,13 +425,12 @@ extension CartViewController: UITableViewDataSource {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UITableViewDelegate -
-//
+
 extension CartViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         
     }
     
