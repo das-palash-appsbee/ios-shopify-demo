@@ -54,7 +54,7 @@ public struct PayPostalAddress {
     /// The original, non-padded zip code that was used to create the address
     internal let originalZip: String?
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(city: String? = nil,
@@ -95,7 +95,7 @@ public struct PayPostalAddress {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Postal Code -
     //
     private static func paddedPostalCode(_ postalCode: String, for countryCode: String) -> (postalCode: String, isModified: Bool) {
@@ -146,7 +146,7 @@ public struct PayAddress {
     /// Email address (eg: "john.smith@gmail.com")
     public let email: String?
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(addressLine1: String? = nil,
@@ -175,7 +175,7 @@ public struct PayAddress {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PassKit -
 //
 internal extension PayPostalAddress {

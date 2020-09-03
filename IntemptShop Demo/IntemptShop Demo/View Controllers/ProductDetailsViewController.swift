@@ -15,9 +15,9 @@ class ProductDetailsViewController: ParallaxViewController {
     
     private var imageViewController: ImageViewController!
     
-    // ----------------------------------
+    
     //  MARK: - Segue -
-    //
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -29,9 +29,9 @@ class ProductDetailsViewController: ParallaxViewController {
         }
     }
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
+    
+    //  MARK: - View Lifecyle -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,22 +62,18 @@ class ProductDetailsViewController: ParallaxViewController {
             ImageItem.url($0.url, placeholder: nil)
         }
     }
-}
-
-// ----------------------------------
-//  MARK: - Actions -
-//
-extension ProductDetailsViewController {
     
+    //  MARK: - Actions -
     @IBAction func cartAction(_ sender: Any) {
         let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
         self.navigationController!.present(cartController, animated: true, completion: nil)
     }
 }
 
-// ----------------------------------
+
+
 //  MARK: - ProductHeaderDelegate -
-//
+
 extension ProductDetailsViewController: ProductHeaderDelegate {
     
     func productHeader(_ cell: ProductHeaderCell, didAddToCart sender: Any) {
@@ -86,9 +82,9 @@ extension ProductDetailsViewController: ProductHeaderDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UITableViewDataSource -
-//
+
 extension ProductDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,9 +104,9 @@ extension ProductDetailsViewController: UITableViewDataSource {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UITableViewDelegate -
-//
+
 extension ProductDetailsViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -118,9 +114,9 @@ extension ProductDetailsViewController: UITableViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Convenience -
-//
+
 private extension UITableView {
     
     func register<C>(_ cellType: C.Type) where C: UITableViewCell {

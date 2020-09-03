@@ -21,7 +21,7 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
     
     var viewModel: ViewModelType?
     
-    // ----------------------------------
+    
     //  MARK: - Configure -
     //
     func configureFrom(_ viewModel: ViewModelType) {
@@ -37,7 +37,7 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Actions -
 //
 extension CartCell {

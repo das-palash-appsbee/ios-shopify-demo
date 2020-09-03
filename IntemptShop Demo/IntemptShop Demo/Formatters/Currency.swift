@@ -4,7 +4,7 @@ import Foundation
 struct Currency {
 
     private static let formatter: NumberFormatter = {
-        let formatter         = NumberFormatter()
+        let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         return formatter
     }()

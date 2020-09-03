@@ -13,9 +13,9 @@ final class ShippingRateViewModel: ViewModel {
     let title:  String
     let price:  Decimal
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model  = model
         

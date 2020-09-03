@@ -15,9 +15,8 @@ struct PageableArray<T: ViewModel> {
     
     private var pageInfo: Storefront.PageInfo
     
-    // ----------------------------------
     //  MARK: - Init -
-    //
+
     init(with items: [T], pageInfo: Storefront.PageInfo) {
         self.items    = items
         self.pageInfo = pageInfo
@@ -28,9 +27,8 @@ struct PageableArray<T: ViewModel> {
         self.pageInfo = pageInfo
     }
     
-    // ----------------------------------
     //  MARK: - Adding -
-    //
+    
     mutating func appendPage(from pageableArray: PageableArray<T>) {
         
         print(items)

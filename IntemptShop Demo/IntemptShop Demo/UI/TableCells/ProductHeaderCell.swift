@@ -16,7 +16,7 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable {
     
     var viewModel: ViewModelType?
     
-    // ----------------------------------
+    
     //  MARK: - Configure -
     //
     func configureFrom(_ viewModel: ViewModelType) {

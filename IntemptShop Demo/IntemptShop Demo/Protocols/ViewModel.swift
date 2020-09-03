@@ -35,7 +35,7 @@ protocol ViewModel: Serializable {
     init(from model: ModelType)
 }
 
-// ----------------------------------
+
 //  MARK: - Serializable -
 //
 extension ViewModel {

@@ -28,7 +28,7 @@ class SeparatorView: UIView {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     init(position: Position) {
@@ -41,7 +41,7 @@ class SeparatorView: UIView {
         super.init(coder: aDecoder)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Superview -
     //
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -51,7 +51,7 @@ class SeparatorView: UIView {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Updates -
     //
     private func updateFrameIn(_ superview: UIView) {

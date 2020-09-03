@@ -34,7 +34,7 @@ internal extension Graph {
         let data:      Data
         let timestamp: Double
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         init(hash: Hash, data: Data, timestamp: Double = Date().timeIntervalSince1970) {
@@ -53,7 +53,7 @@ internal extension Graph {
             self.timestamp = result.meta["timestamp"] as! Double
         }
         
-        // ----------------------------------
+        
         //  MARK: - IO -
         //
         private static func read(from location: Location) -> (data: Data, meta: [String : Any])? {
@@ -90,7 +90,7 @@ internal extension Graph {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Location -
 //
 extension Graph.CacheItem {
@@ -99,7 +99,7 @@ extension Graph.CacheItem {
         let dataURL: URL
         let metaURL: URL
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         init(inParent url: URL, hash: Graph.Hash) {
@@ -117,7 +117,7 @@ extension Graph.CacheItem {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - URLRequest Hash -
 //
 extension URLRequest {

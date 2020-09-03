@@ -15,16 +15,16 @@ class AccountController {
     
     private let defaults = UserDefaults.standard
     
-    // ----------------------------------
+
     //  MARK: - Init -
-    //
+    
     private init() {
         self.loadToken()
     }
     
-    // ----------------------------------
+
     //  MARK: - Management -
-    //
+
     func save(accessToken: String) {
         self.accessToken = accessToken
         self.defaults.set(accessToken, forKey: Key.token)

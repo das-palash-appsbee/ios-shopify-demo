@@ -12,7 +12,7 @@ class OrderCell: UITableViewCell, ViewModelConfigurable {
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var detailLabel:   UILabel!
     
-    // ----------------------------------
+    
     //  MARK: - Configure -
     //
     func configureFrom(_ viewModel: ViewModelType) {

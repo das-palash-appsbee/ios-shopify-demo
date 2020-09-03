@@ -16,8 +16,8 @@ protocol TotalsControllerDelegate: class {
 class TotalsViewController: UIViewController {
     
     @IBOutlet private weak var subtotalTitleLabel: UILabel!
-    @IBOutlet private weak var subtotalLabel:      UILabel!
-    @IBOutlet private weak var buttonStackView:    UIStackView!
+    @IBOutlet private weak var subtotalLabel: UILabel!
+    @IBOutlet private weak var buttonStackView: UIStackView!
     
     weak var delegate: TotalsControllerDelegate?
     
@@ -33,9 +33,9 @@ class TotalsViewController: UIViewController {
         }
     }
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
+
+    //  MARK: - View Lifecyle -
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,24 +58,22 @@ class TotalsViewController: UIViewController {
 //        }
     }
     
-    // ----------------------------------
     //  MARK: - Actions -
-    //
+
     @objc func webCheckoutAction(_ sender: Any) {
      //   self.delegate?.totalsController(self, didRequestPaymentWith: .webCheckout)
         
-        let alert = UIAlertController(title: "Payment Sucessfull", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Payment Successful", message: "", preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: { _ in
-            for i in CartController.shared.items
-            {
-            CartController.shared.removeAllQuantitiesFor(i)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            for i in CartController.shared.items {
+                CartController.shared.removeAllQuantitiesFor(i)
             }
             
             self.dismiss(animated: true, completion: nil)
-               }))
+        }))
               
-               self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func applePayAction(_ sender: Any) {

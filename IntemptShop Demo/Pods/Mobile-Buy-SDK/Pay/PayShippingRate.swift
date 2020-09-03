@@ -78,7 +78,7 @@ public struct PayShippingRate {
     /// A delivery range that represents a timeframe during which a delivery is expected.
     public let deliveryRange: DeliveryRange?
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     public init(handle: String, title: String, price: Decimal, deliveryRange: DeliveryRange? = nil) {
@@ -89,7 +89,7 @@ public struct PayShippingRate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Date -
 //
 private extension Date {
@@ -107,7 +107,7 @@ private extension Date {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PassKit -
 //
 internal extension PayShippingRate {

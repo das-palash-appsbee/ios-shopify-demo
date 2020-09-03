@@ -59,7 +59,7 @@ internal extension Graph {
         
         internal var task:         URLSessionDataTask?
         
-        // ----------------------------------
+        
         //  MARK: - Init -
         //
         internal init(session: URLSession, cache: Cache, request: URLRequest, cachePolicy:  CachePolicy, retryHandler: RetryHandler<R>? = nil, completion: @escaping TaskCompletion) {
@@ -71,7 +71,7 @@ internal extension Graph {
             self.completion   = completion
         }
 
-        // ----------------------------------
+        
         //  MARK: - Control -
         //
         func resume() {
@@ -146,7 +146,7 @@ internal extension Graph {
             self.task?.cancel()
         }
 
-        // ----------------------------------
+        
         //  MARK: - Cache -
         //
         private func cache(_ data: Data, for hash: Hash) {
@@ -203,7 +203,7 @@ internal extension Graph {
             completion(model)
         }
         
-        // ----------------------------------
+        
         //  MARK: - Session -
         //
         private func graphTaskWith(_ request: URLRequest, retryHandler: RetryHandler<R>? = nil, completion: @escaping (R?, Data?, QueryError?) -> Void) -> URLSessionDataTask {

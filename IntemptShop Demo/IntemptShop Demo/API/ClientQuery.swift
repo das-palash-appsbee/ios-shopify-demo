@@ -8,7 +8,7 @@ final class ClientQuery {
 
     static let maxImageDimension = Int32(UIScreen.main.bounds.width)
     
-    // ----------------------------------
+    
     //  MARK: - Customers -
     //
     static func mutationForLogin(email: String, password: String) -> Storefront.MutationQuery {
@@ -57,7 +57,7 @@ final class ClientQuery {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Shop -
     //
     static func queryForShopName() -> Storefront.QueryRootQuery {
@@ -68,7 +68,7 @@ final class ClientQuery {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Storefront -
     //
     static func queryForCollections(limit: Int, after cursor: String? = nil, productLimit: Int = 2, productCursor: String? = nil) -> Storefront.QueryRootQuery {
@@ -109,7 +109,7 @@ final class ClientQuery {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Discounts -
     //
     static func mutationForApplyingDiscount(_ discountCode: String, to checkoutID: String) -> Storefront.MutationQuery {
@@ -127,7 +127,7 @@ final class ClientQuery {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Gift Cards -
     //
     static func mutationForApplyingGiftCard(_ giftCardCode: String, to checkoutID: String) -> Storefront.MutationQuery {
@@ -145,7 +145,7 @@ final class ClientQuery {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Checkout -
     //
     static func mutationForCreateCheckout(with cartItems: [CartItem]) -> Storefront.MutationQuery {

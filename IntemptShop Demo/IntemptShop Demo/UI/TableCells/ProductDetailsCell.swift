@@ -9,7 +9,7 @@ class ProductDetailsCell: UITableViewCell, ViewModelConfigurable {
     
     var viewModel: ViewModelType?
     
-    // ----------------------------------
+    
     //  MARK: - Configure -
     //
     func configureFrom(_ viewModel: ViewModelType) {

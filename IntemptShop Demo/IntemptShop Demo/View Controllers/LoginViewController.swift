@@ -9,11 +9,11 @@ protocol LoginControllerDelegate: class {
 
 class LoginViewController: UIViewController {
     
-    weak var delegate: LoginControllerDelegate?
-    
     @IBOutlet private weak var loginButton:   UIButton!
     @IBOutlet private weak var usernameField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
+    
+    weak var delegate: LoginControllerDelegate?
     
     private var email: String {
         return self.usernameField.text ?? ""
@@ -23,29 +23,25 @@ class LoginViewController: UIViewController {
         return self.passwordField.text ?? ""
     }
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
+    //  MARK: - View Lifecyle -
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateLoginState()
     }
     
-    // ----------------------------------
     //  MARK: - Updates -
-    //
     private func updateLoginState() {
         let isValid = !self.email.isEmpty && !self.password.isEmpty
         
         self.loginButton.isEnabled = isValid
-        self.loginButton.alpha     = isValid ? 1.0 : 0.5
+        self.loginButton.alpha = isValid ? 1.0 : 0.5
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Actions -
-//
 extension LoginViewController {
  
     @IBAction private func textFieldValueDidChange(textField: UITextField) {

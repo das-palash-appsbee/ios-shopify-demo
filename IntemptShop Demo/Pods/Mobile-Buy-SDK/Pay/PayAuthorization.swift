@@ -44,7 +44,7 @@ public struct PayAuthorization {
     /// Shipping rate that was selected by the user
     public let shippingRate: PayShippingRate?
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     internal init(paymentData: Data, billingAddress: PayAddress, shippingAddress: PayAddress, shippingRate: PayShippingRate?) {

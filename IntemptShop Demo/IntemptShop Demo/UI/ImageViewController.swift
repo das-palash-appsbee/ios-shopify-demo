@@ -44,7 +44,7 @@ class ImageViewController: UIViewController {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - View Load -
     //
     override func loadView() {
@@ -92,7 +92,7 @@ class ImageViewController: UIViewController {
         }, completion: nil)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func viewWillLayoutSubviews() {
@@ -120,7 +120,7 @@ class ImageViewController: UIViewController {
         self.collectionView.contentOffset = offset
     }
     
-    // ----------------------------------
+    
     //  MARK: - Update -
     //
     private func resetCollectionView() {
@@ -135,7 +135,7 @@ class ImageViewController: UIViewController {
         self.pageControl.numberOfPages = self.imageItems.count
     }
     
-    // ----------------------------------
+    
     //  MARK: - UIScrollViewDelegate -
     //
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -151,7 +151,6 @@ class ImageViewController: UIViewController {
     }
 }
 
-// ---------------------------------------
 //  MARK: - UICollectionViewDataSource -
 //
 extension ImageViewController: UICollectionViewDataSource {
@@ -176,7 +175,7 @@ extension ImageViewController: UICollectionViewDataSource {
     }
 }
 
-// ------------------------------------------------
+
 //  MARK: - UICollectionViewDelegateFlowLayout -
 //
 extension ImageViewController: UICollectionViewDelegateFlowLayout {
@@ -186,7 +185,7 @@ extension ImageViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// ---------------------------------------
+
 //  MARK: - UICollectionViewDelegate -
 //
 extension ImageViewController: UICollectionViewDelegate {
@@ -197,7 +196,7 @@ extension ImageViewController: UICollectionViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - ImageItems -
 //
 enum ImageItem {
@@ -205,7 +204,7 @@ enum ImageItem {
     case url(URL, placeholder: UIImage?)
 }
 
-// ----------------------------------
+
 //  MARK: - ImageCell -
 //
 private final class ImageCell: UICollectionViewCell {
@@ -221,7 +220,7 @@ private final class ImageCell: UICollectionViewCell {
         return imageView
     }()
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     override init(frame: CGRect) {
@@ -240,7 +239,7 @@ private final class ImageCell: UICollectionViewCell {
         self.contentView.addSubview(self.imageView)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func layoutSubviews() {
@@ -248,7 +247,7 @@ private final class ImageCell: UICollectionViewCell {
         self.imageView.frame = self.bounds
     }
     
-    // ----------------------------------
+    
     //  MARK: - Setters -
     //
     func setImage(loadingFrom url: URL, placeholder: UIImage? = nil) {

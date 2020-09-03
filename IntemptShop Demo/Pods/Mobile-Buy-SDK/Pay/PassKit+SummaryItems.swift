@@ -26,7 +26,7 @@
 
 import PassKit
 
-// ----------------------------------
+
 //  MARK: - Decimal -
 //
 internal extension Decimal {
@@ -40,7 +40,7 @@ internal extension Decimal {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - PKPaymentSummaryItem -
 //
 internal extension PKPaymentSummaryItem {

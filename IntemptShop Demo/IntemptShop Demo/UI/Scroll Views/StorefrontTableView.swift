@@ -18,7 +18,7 @@ class StorefrontTableView: UITableView, Paginating {
     var paginationState:     PaginationState     = .ready
     var paginationDirection: PaginationDirection = .verical
     
-    // ----------------------------------
+    
     //  MARK: - Awake -
     //
     override func awakeFromNib() {
@@ -29,7 +29,7 @@ class StorefrontTableView: UITableView, Paginating {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func layoutSubviews() {

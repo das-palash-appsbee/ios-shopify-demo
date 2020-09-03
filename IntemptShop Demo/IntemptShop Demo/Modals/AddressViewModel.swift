@@ -21,9 +21,8 @@ final class AddressViewModel: ViewModel {
     let province:    String?
     let zip:         String?
     
-    // ----------------------------------
     //  MARK: - Init -
-    //
+
     required init(from model: ModelType) {
         self.model       = model
         

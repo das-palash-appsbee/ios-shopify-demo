@@ -3,7 +3,7 @@ import UIKit
 
 class RoundedButton: UIButton {
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     override init(frame: CGRect) {
@@ -23,7 +23,7 @@ class RoundedButton: UIButton {
         self.layer.masksToBounds = true
     }
     
-    // ----------------------------------
+    
     //  MARK: - Selection -
     //
     override var isHighlighted: Bool {

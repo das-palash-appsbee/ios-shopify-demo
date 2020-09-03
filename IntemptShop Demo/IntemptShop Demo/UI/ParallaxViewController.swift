@@ -33,7 +33,18 @@ class ParallaxViewController: UIViewController {
     private var proxyView = ProxyView(frame: .zero)
     
     private var topY: CGFloat {
-        return max(self.insets.top, self.topLayoutGuide.length)
+        
+        //let guide = self.view.safeAreaLayoutGuide.topAnchor
+        
+        let topSpace:CGFloat
+        
+        if #available(iOS 11.0, *) {
+            topSpace = self.view.safeAreaInsets.top
+            //topSpace = self.view.safeAreaLayoutGuide.topAnchor
+        } else {
+            topSpace = self.topLayoutGuide.length
+        }
+        return max(self.insets.top, topSpace) //self.topLayoutGuide.length
     }
     
     private var midY: CGFloat {
@@ -41,7 +52,15 @@ class ParallaxViewController: UIViewController {
     }
     
     private var bottomSpace: CGFloat {
-        return self.bottomLayoutGuide.length
+
+        let bottomSpace:CGFloat
+        if #available(iOS 11.0, *) {
+            bottomSpace = self.view.safeAreaInsets.bottom
+            //bottomSpace = self.view.safeAreaLayoutGuide.bottomAnchor
+        } else {
+            bottomSpace = self.bottomLayoutGuide.length
+        }
+        return bottomSpace //self.bottomLayoutGuide.length
     }
     
     var layout: Layout = .headerBelow {
@@ -52,8 +71,8 @@ class ParallaxViewController: UIViewController {
         }
     }
     
-    // ----------------------------------
-    //  MARK: - View Loading -
+    
+    //  MARK: - View Lifecyle -
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +90,7 @@ class ParallaxViewController: UIViewController {
         self.scrollView.backgroundColor = .clear
     }
     
-    // ----------------------------------
+    
     //  MARK: - Updates -
     //
     func updateParallax() {
@@ -86,7 +105,7 @@ class ParallaxViewController: UIViewController {
         self.headerView.frame = frame
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout Subviews -
     //
     override func viewWillLayoutSubviews() {
@@ -148,7 +167,7 @@ class ParallaxViewController: UIViewController {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - ProxyView -
 //
 private class ProxyView: UIView {

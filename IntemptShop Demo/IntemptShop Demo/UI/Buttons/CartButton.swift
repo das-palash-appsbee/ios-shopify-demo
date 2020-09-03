@@ -11,7 +11,7 @@ class CartButton: UIBarButtonItem {
     
     private var cartView: CartButtonView!
 
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     override init() {
@@ -46,7 +46,7 @@ class CartButton: UIBarButtonItem {
         self.unregisterNotifications()
     }
     
-    // ----------------------------------
+    
     //  MARK: - Notifications -
     //
     private func registerNotifications() {
@@ -62,7 +62,7 @@ class CartButton: UIBarButtonItem {
         print("Badge count change notification received")
     }
     
-    // ----------------------------------
+    
     //  MARK: - Cart View -
     //
     private func createCartButtonView() -> CartButtonView {
@@ -78,26 +78,24 @@ class CartButton: UIBarButtonItem {
         return cartView
     }
     
-    // ----------------------------------
+    
     //  MARK: - Update -
     //
     private func updateBadgeCount(animated: Bool) {
         self.cartView.setBadge(CartController.shared.itemCount, animated: animated)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Actions -
     //
     @objc private func cartAction(_ sender: Any) {
-        if let target = self.target,
-            let selector = self.action {
-            
+        if let target = self.target, let selector = self.action {
             _ = target.perform(selector, with: sender)
         }
     }
 }
 
-// ----------------------------------
+
 //  MARK: - CartButtonView -
 //
 private class CartButtonView: UIButton {
@@ -109,7 +107,7 @@ private class CartButtonView: UIButton {
     private var badgeTransformMax     = CATransform3DMakeScale(1.5, 1.5, 1.5)
     private var badgeTransformDefault = CATransform3DIdentity
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     override init(frame: CGRect) {
@@ -134,7 +132,7 @@ private class CartButtonView: UIButton {
         self.addSubview(self.badgeView)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Badge -
     //
     func setBadge(_ badge: Int, animated: Bool) {
@@ -171,7 +169,7 @@ private class CartButtonView: UIButton {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Animations -
     //
     enum BadgeAnimationType {
@@ -229,7 +227,7 @@ private class CartButtonView: UIButton {
         }
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func layoutSubviews() {
@@ -258,7 +256,7 @@ private class BadgeView: UIView {
     
     private var label: UILabel!
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     override init(frame: CGRect) {
@@ -292,7 +290,7 @@ private class BadgeView: UIView {
         self.addSubview(self.label)
     }
     
-    // ----------------------------------
+    
     //  MARK: - Layout -
     //
     override func sizeToFit() {

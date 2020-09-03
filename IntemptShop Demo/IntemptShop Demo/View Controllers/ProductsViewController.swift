@@ -10,16 +10,15 @@ class ProductsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: StorefrontCollectionView!
     
-    var graph:      Graph!
+    var graph: Graph!
     var collection: CollectionViewModel!
-    var delegate : productDelegate?
+    var delegate: productDelegate?
 
-    fileprivate let columns:  Int = 2
+    fileprivate let columns: Int = 2
     fileprivate var products: PageableArray<ProductViewModel>!
     
-    // ----------------------------------
-    //  MARK: - View Loading -
-    //
+    //  MARK: - View Lifecyle -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true);
@@ -34,14 +33,18 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    @IBAction private func back(_ sender: UIBarButtonItem) {
-        self.delegate?.changeEvent(str: "1")
-        self.navigationController?.popViewController(animated: true)
-      }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.setHidesBackButton(true, animated: true);
 
     }
+    
+    //  MARK: - Actions -
+    
+    @IBAction private func back(_ sender: UIBarButtonItem) {
+        self.delegate?.changeEvent(str: "1")
+        self.navigationController?.popViewController(animated: true)
+    }
+
     private func configureCollectionView() {
         self.collectionView.paginationDelegate = self
         
@@ -50,30 +53,15 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    // ----------------------------------
-    //  MARK: - View Controllers -
-    //
-    func productDetailsViewControllerWith(_ product: ProductViewModel) -> ProductDetailsViewController {
-        let controller: ProductDetailsViewController = self.storyboard!.instantiateViewController()
-        controller.product = product
-        return controller
-    }
-}
-
-// ----------------------------------
-//  MARK: - Actions -
-//
-extension ProductsViewController {
-    
     @IBAction func cartAction(_ sender: Any) {
         let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
         self.navigationController!.present(cartController, animated: true, completion: nil)
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UIViewControllerPreviewingDelegate -
-//
+
 extension ProductsViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -85,7 +73,7 @@ extension ProductsViewController: UIViewControllerPreviewingDelegate {
             previewingContext.sourceRect = frame
             
             let cell = collectionView.cellForItem(at: indexPath) as! ProductCell
-            return self.productDetailsViewControllerWith(cell.viewModel!)
+            return productDetailsViewControllerWith(cell.viewModel!)
         }
         return nil
     }
@@ -95,9 +83,8 @@ extension ProductsViewController: UIViewControllerPreviewingDelegate {
     }
 }
 
-// ----------------------------------
 //  MARK: - PaginationDelegate -
-//
+
 extension ProductsViewController: StorefrontCollectionViewDelegate {
     
     func collectionViewShouldBeginPaging(_ collectionView: StorefrontCollectionView) -> Bool {
@@ -124,9 +111,9 @@ extension ProductsViewController: StorefrontCollectionViewDelegate {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UICollectionViewDataSource -
-//
+
 extension ProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -135,7 +122,7 @@ extension ProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell    = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.className, for: indexPath) as! ProductCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCell.className, for: indexPath) as! ProductCell
         let product = self.products.items[indexPath.item]
         
         cell.configureFrom(product)
@@ -150,13 +137,15 @@ extension ProductsViewController: UICollectionViewDataSource {
     }
 }
 
+//  MARK: - UICollectionViewDelegateFlowLayout -
+
 extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let layout         = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let itemSpacing    = layout.minimumInteritemSpacing * CGFloat(self.columns - 1)
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let itemSpacing = layout.minimumInteritemSpacing * CGFloat(self.columns - 1)
         let sectionSpacing = layout.sectionInset.left + layout.sectionInset.right
-        let length         = (collectionView.bounds.width - itemSpacing - sectionSpacing) / CGFloat(self.columns)
+        let length = (collectionView.bounds.width - itemSpacing - sectionSpacing) / CGFloat(self.columns)
         
         return CGSize(
             width:  length,
@@ -165,14 +154,14 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - UICollectionViewDelegate -
-//
+
 extension ProductsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product    = self.products.items[indexPath.item]
-        let controller = self.productDetailsViewControllerWith(product)
+        let product = self.products.items[indexPath.item]
+        let controller = productDetailsViewControllerWith(product)
         self.navigationController!.show(controller, sender: self)
 
         collectionView.deselectItem(at: indexPath, animated: true)

@@ -27,12 +27,12 @@ protocol Paginating: class {
     func didCompletePaging()
 }
 
-// ----------------------------------
+
 //  MARK: - Default Implementation -
 //
 extension Paginating {
     
-    // ----------------------------------
+    
     //  MARK: - Content Management -
     //
     var contentOffsetDelta: CGSize {
@@ -70,7 +70,7 @@ extension Paginating {
         return self.bounds.width > 0 && self.bounds.height > 0
     }
 
-    // ----------------------------------
+    
     //  MARK: - State Management -
     //
     func beginPaging() {
@@ -106,7 +106,7 @@ extension Paginating {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Geometry -
 //
 private func -(lhs: CGSize, rhs: CGPoint) -> CGSize {

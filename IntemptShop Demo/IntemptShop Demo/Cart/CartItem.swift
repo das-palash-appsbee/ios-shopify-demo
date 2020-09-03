@@ -14,7 +14,7 @@ class CartItem: Equatable, Hashable, Serializable {
     
     var quantity: Int
     
-    // ----------------------------------
+    
     //  MARK: - Init -
     //
     required init(product: ProductViewModel, variant: VariantViewModel, quantity: Int = 1) {
@@ -23,9 +23,8 @@ class CartItem: Equatable, Hashable, Serializable {
         self.quantity = quantity
     }
     
-    // ----------------------------------
     //  MARK: - Serializable -
-    //
+    
     static func deserialize(from representation: SerializedRepresentation) -> Self? {
         guard let product = ProductViewModel.deserialize(from: representation[Key.product] as! SerializedRepresentation) else {
             return nil
@@ -55,9 +54,9 @@ class CartItem: Equatable, Hashable, Serializable {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Hashable -
-//
+
 extension CartItem {
 
     func hash(into hasher: inout Hasher) {
@@ -65,9 +64,9 @@ extension CartItem {
     }
 }
 
-// ----------------------------------
+
 //  MARK: - Equatable -
-//
+
 extension CartItem {
     
     static func ==(lhs: CartItem, rhs: CartItem) -> Bool {
