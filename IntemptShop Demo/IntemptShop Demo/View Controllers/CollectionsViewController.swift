@@ -28,6 +28,8 @@ class CollectionsViewController: UIViewController,productDelegate {
     @IBOutlet weak var lbl4: UILabel!
     @IBOutlet weak var lbl5: UILabel!
     @IBOutlet weak var lbl6: UILabel!
+    @IBOutlet weak var blurView: UIView!
+
     fileprivate var collections: PageableArray<CollectionViewModel>!
     fileprivate var collections1: PageableArray<CollectionViewModel>!
 
@@ -36,6 +38,7 @@ class CollectionsViewController: UIViewController,productDelegate {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchCollections()
         self.lbl1.text = "Accessories"
                               self.lbl2.text = "Pants"
                               self.lbl3.text = "Sale"
@@ -45,7 +48,6 @@ class CollectionsViewController: UIViewController,productDelegate {
         self.tableView.isHidden = true
         self.scrolView.contentSize = CGSize (width: self.scrolView.frame.size.width, height: self.footerView.frame.origin.y + self.footerView.frame.size.height+130)
         self.configureTableView()
-        self.fetchCollections()
         self.navigationItem.setHidesBackButton(true, animated: true);
     }
     
@@ -71,21 +73,16 @@ class CollectionsViewController: UIViewController,productDelegate {
         
         Client.shared.fetchCollections(after: cursor) { collections in
             if let collections = collections {
+                if collections.items.count > 0
+                {
+                    self.blurView.isHidden = true
+                }
+                else
+                {
+                    self.blurView.isHidden = false
+                }
                 
-                print("data---\(collections.items)")
-                
-
                 self.collections = collections
-               // let collection = self.collections1.items[0]
-
-              //  let ary = NSMutableArray()
-              //  ary.add(collection)
-              //  print("ary----\(ary)")
-               
-
-                //print("data----\(self.collections1.items[0])")
-               // self.collections.appendPage(from: self.collections1.items[0])
-
                 self.tableView.reloadData()
                 
             }
