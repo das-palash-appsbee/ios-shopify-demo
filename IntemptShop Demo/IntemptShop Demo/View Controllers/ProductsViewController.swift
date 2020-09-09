@@ -41,7 +41,7 @@ class ProductsViewController: UIViewController {
     //  MARK: - Actions -
     
     @IBAction private func back(_ sender: UIBarButtonItem) {
-        self.delegate?.changeEvent(str: "1")
+        //self.delegate?.changeEvent(str: "1")
         self.navigationController?.popViewController(animated: true)
     }
 

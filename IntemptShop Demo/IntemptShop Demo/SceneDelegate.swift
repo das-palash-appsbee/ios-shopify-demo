@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intempt
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,9 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if(IntemptConfig.orgId == "Your Organization Id" || IntemptConfig.sourceId == "Your Source Id" || IntemptConfig.orgId == "Your Token") {
+            print("Please configure your Intempt profile to proceed.")
+            return
+        }
+        IntemptTracker.tracking(withOrgId: IntemptConfig.orgId, andSourceId: IntemptConfig.sourceId, andToken: IntemptConfig.token)
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

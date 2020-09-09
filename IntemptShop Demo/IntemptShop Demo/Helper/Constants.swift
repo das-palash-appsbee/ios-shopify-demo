@@ -11,6 +11,21 @@ import UIKit
 
 let AppTitle = Bundle.main.object(forInfoDictionaryKey:"CFBundleName") as! String
 let stroryboard = UIStoryboard(name: "Main", bundle: nil)
+let appDel = UIApplication.shared.delegate as! AppDelegate
+
+enum Environment: String {
+    case staging = "https://api.staging.intempt.com/v1/"
+    case production = "https://api.intempt.com/v1/"
+}
+let environment: Environment = .production
+
+
+struct API {
+    static let baseURL = environment.rawValue
+    
+    //Endpoints
+    static let segment = "playground/segmentations/latest" //Enter your "organization Id" in place of "playground"
+}
 
 struct IntemptConfig {
     //Please go to https://app.intempt.com/home and obtain Intempt credentials
@@ -20,6 +35,7 @@ struct IntemptConfig {
     static let token = "Your Token" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
 }
 
+
 struct Shopify {
     //Please go to https://shopify.dev/tools/libraries/storefront-api/ios and obtain credentials
     
@@ -28,6 +44,8 @@ struct Shopify {
     static let merchantID = "Your Merchant ID" //Example: merchant.com.your.id
     static let locale = Locale(identifier: "en-US")
 }
+
+
 
 
 // MARK: - Alert

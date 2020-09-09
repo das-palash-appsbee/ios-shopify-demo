@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0707552508D114005E1199 /* Intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0707532508CFC0005E1199 /* Intempt.framework */; };
+		0C0707562508D115005E1199 /* Intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0707532508CFC0005E1199 /* Intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C3542B424FFC1270023C271 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3542B324FFC1270023C271 /* Constants.swift */; };
 		B9A78E9B40704D2259A673AE /* Pods_IntemptShop_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */; };
 		ED6C22AC24FE3D9700F4F740 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C22AB24FE3D9700F4F740 /* PushManager.swift */; };
@@ -103,7 +105,22 @@
 		EDFADF8A24FA32B40076A1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFADF8924FA32B40076A1FE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0CD40F632508CE84005A6F12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C0707562508D115005E1199 /* Intempt.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0C0707532508CFC0005E1199 /* Intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Intempt.framework; sourceTree = "<group>"; };
 		0C3542B324FFC1270023C271 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		234D9CE4B98630E783BE93B6 /* Pods-IntemptShop Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.debug.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		9195C4C04578FF9E4397633A /* Pods_IntemptShop_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntemptShop_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0707552508D114005E1199 /* Intempt.framework in Frameworks */,
 				B9A78E9B40704D2259A673AE /* Pods_IntemptShop_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +327,7 @@
 				ED6C22AA24FE3D7E00F4F740 /* IntemptShop Demo.entitlements */,
 				EDFADED424FA2F270076A1FE /* AppDelegate.swift */,
 				EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */,
+				0C0707532508CFC0005E1199 /* Intempt.framework */,
 				EDFADF5624FA31E40076A1FE /* View Controllers */,
 				EDFADF2724FA31790076A1FE /* Modals */,
 				EDFADF0D24FA310B0076A1FE /* API */,
@@ -494,6 +513,7 @@
 				EDFADEB624FA2E2A0076A1FE /* Frameworks */,
 				EDFADEB724FA2E2A0076A1FE /* Resources */,
 				3625AE2974004592B9E3B2E1 /* [CP] Embed Pods Frameworks */,
+				0CD40F632508CE84005A6F12 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -827,6 +847,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IntemptShop\\ Demo",
+					"$(PROJECT_DIR)/IntemptShop\\ Demo",
+				);
 				INFOPLIST_FILE = "IntemptShop Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -849,6 +874,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IntemptShop\\ Demo",
+					"$(PROJECT_DIR)/IntemptShop\\ Demo",
+				);
 				INFOPLIST_FILE = "IntemptShop Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
