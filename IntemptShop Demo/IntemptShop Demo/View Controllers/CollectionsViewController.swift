@@ -88,6 +88,8 @@ class CollectionsViewController: UIViewController,productDelegate {
 
 
                 self.collections = collections
+                self.tableView.dataSource = self
+                self.tableView.delegate = self
                 self.tableView.reloadData()
             }
         }
@@ -169,7 +171,7 @@ extension CollectionsViewController {
     @IBAction private func clickCollectionAction(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[1]
                 self.productsList(collection: collection)
                 
@@ -180,7 +182,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 1 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[2]
                 self.productsList(collection: collection)
                     
@@ -192,7 +194,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 2 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[3]
                 self.productsList(collection: collection)
                 
@@ -203,7 +205,7 @@ extension CollectionsViewController {
             }
         }
         else if sender.tag == 3 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[10]
                 self.productsList(collection: collection)
             }
@@ -213,7 +215,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 4 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[11]
                 self.productsList(collection: collection)
 
@@ -224,7 +226,7 @@ extension CollectionsViewController {
             }
         }
         else if sender.tag == 5 {
-            if self.flagProspect {
+            if self.flagProspect == false {
                 let collection = self.collections.items[8]
                 let productsController = self.productsViewControllerWith(collection)
                 productsController.delegate = self
@@ -291,7 +293,7 @@ extension CollectionsViewController {
     @IBAction private func clickAction(_ sender: Any) {
         UIView.animate(withDuration: 1.0) {
             
-            if self.flagProspect == false {
+            if self.flagProspect == true {
                 self.bannerImage.image = UIImage.init(named: "2.png")
                 self.img1.image = UIImage.init(named: "A1.png")
                 self.img2.image = UIImage.init(named: "A2.png")
