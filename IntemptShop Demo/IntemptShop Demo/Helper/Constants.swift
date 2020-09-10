@@ -24,24 +24,24 @@ struct API {
     static let baseURL = environment.rawValue
     
     //Endpoints
-    static let segment = "playground/segmentations/latest" //Enter your "organization Id" in place of "playground"
+    static let segment = "playground" + "/segmentations/latest"
 }
 
 struct IntemptConfig {
     //Please go to https://app.intempt.com/home and obtain Intempt credentials
     
-    static let orgId = "Your Organization Id" // Example: intempt-hotel-demo
-    static let sourceId = "Your Source Id" //Example: 1111111111111111
-    static let token = "Your Token" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
+    static let orgId = "ios-shopify-demo-app" // Example: intempt-hotel-demo
+    static let sourceId = "129646758011539456" //Example: 1111111111111111
+    static let token = "yohT_JeIv7YxjcKwfIamzrYoLi1FYzb8.QMDmUX5hynkQzYzfJQbCX5ozGeYDfHqC1rhKiB99uFPjln1Yte-QuYSQsi0h764j" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
 }
 
 
 struct Shopify {
     //Please go to https://shopify.dev/tools/libraries/storefront-api/ios and obtain credentials
     
-    static let shopDomain = "Your Shopify Domain" //Example: company.myshopify.com
-    static let apiKey = "Your API Key" //Example: aae05a5437d5eef88db5cd877d6acbd9
-    static let merchantID = "Your Merchant ID" //Example: merchant.com.your.id
+    static let shopDomain = "intempt1.myshopify.com" //Example: company.myshopify.com
+    static let apiKey = "aae05a2034d5eef85db5cd073d6acbd4" //Example: aae05a5437d5eef88db5cd877d6acbd9
+    static let merchantID = "merchant.com.your.id" //Example: merchant.com.your.id
     static let locale = Locale(identifier: "en-US")
 }
 

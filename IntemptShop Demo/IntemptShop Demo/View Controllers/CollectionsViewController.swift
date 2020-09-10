@@ -84,7 +84,7 @@ class CollectionsViewController: UIViewController,productDelegate {
                 else{
                     self.blurView.isHidden = false
                 }
-                print("data---\(collections.items)")
+                //print("data---\(collections.items)")
 
 
                 self.collections = collections
@@ -95,8 +95,8 @@ class CollectionsViewController: UIViewController,productDelegate {
     
     private func fetchSegmentWith(sourceId:String, visitorId:String) {
         
-        let strUrl = API.baseURL + API.segment + "?sourceId=\(sourceId)&profile={\"visitorId\":\"\(visitorId)\"}"
-        //let strUrl = API.baseURL + API.segment + "?profileId=120946287348477954"
+        //let strUrl = API.baseURL + API.segment + "?sourceId=\(sourceId)&profile={\"visitorId\":\"\(visitorId)\"}"
+        let strUrl = API.baseURL + "playground/segmentations/latest?profileId=120946287348477954"
         
         guard let urlQuery = strUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlQuery) else {
             showAlert(title: AppTitle, message: "URL is not valid.", vc: self)
@@ -105,6 +105,7 @@ class CollectionsViewController: UIViewController,productDelegate {
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 180)
         request.httpMethod = "GET"
         
+        print("Request URL: \(urlQuery)")
 
         let session = URLSession.init(configuration: .default, delegate: nil, delegateQueue: OperationQueue())
         
@@ -116,14 +117,12 @@ class CollectionsViewController: UIViewController,productDelegate {
                     showAlert(title: AppTitle, message: error?.localizedDescription ?? "No specific error found.", vc: self)
                 }
                 else {
-                    //print(String(decoding: data!, as: UTF8.self))
+                    print("API Segmentation Response:\(String(decoding: data!, as: UTF8.self))")
                     
                     do {
                         let dictJson = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
                         
                         if let dictOriginal = dictJson as? [String:Any], let dictEmbedded = dictOriginal["_embedded"] as? [String:Any], let arrSegmentations = dictEmbedded["segmentations"] as? [[String:Any]]  {
-                            
-                            print(arrSegmentations.count)
                             
                             for dictSegment in arrSegmentations {
                                 if let saasProspectStatus = dictSegment["saas-prospect"] as? Bool {
