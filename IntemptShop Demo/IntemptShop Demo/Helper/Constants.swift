@@ -30,9 +30,9 @@ struct API {
 struct IntemptConfig {
     //Please go to https://app.intempt.com/home and obtain Intempt credentials
     
-    static let orgId = "ios-shopify-demo-app" // Example: intempt-hotel-demo
-    static let sourceId = "129646758011539456" //Example: 1111111111111111
-    static let token = "yohT_JeIv7YxjcKwfIamzrYoLi1FYzb8.QMDmUX5hynkQzYzfJQbCX5ozGeYDfHqC1rhKiB99uFPjln1Yte-QuYSQsi0h764j" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
+    static let orgId = "playground" // Example: intempt-hotel-demo
+    static let sourceId = "137340365627670528" //Example: 1111111111111111
+    static let token = "ST-JuK8lbjIMD_NDdj0ibYVtLM0tGKyo.cyptoYSlnwCm-LXNiTcAdT_gt5z82fE59EZ8antlMm1L835BvMPiAwwS8hYtch1U" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
 }
 
 
