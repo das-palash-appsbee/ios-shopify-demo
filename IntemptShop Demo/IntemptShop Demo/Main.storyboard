@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5HA-7N-vXJ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +10,7 @@
         <!--Customer Coordinator-->
         <scene sceneID="L3n-53-vgO">
             <objects>
-                <viewController storyboardIdentifier="CustomerCoordinator" useStoryboardIdentifierAsRestorationIdentifier="YES" id="95v-dm-qjx" customClass="CustomerCoordinator" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerCoordinator" useStoryboardIdentifierAsRestorationIdentifier="YES" id="95v-dm-qjx" customClass="CustomerCoordinator" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="plc-sW-dCr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +25,7 @@
         <!--Login-->
         <scene sceneID="NVQ-Nb-Rjf">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xs-ss-CF5" customClass="LoginViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xs-ss-CF5" customClass="LoginViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cl-2u-O12">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +33,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofp-jd-uzq">
                                 <rect key="frame" x="40" y="64" width="295" height="40"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-3Z-lNA" customClass="SeparatorView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuO-3Z-lNA" customClass="SeparatorView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,7 +86,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Dq5-2j-FEU" secondAttribute="trailing" id="go8-yb-qmI"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acg-ZT-UIP" customClass="RoundedButton" customModule="IntemptShop_Demo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acg-ZT-UIP" customClass="RoundedButton" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                 <rect key="frame" x="40" y="154" width="295" height="44"/>
                                 <color key="backgroundColor" red="0.35751083061884043" green="0.48840632277339202" blue="0.72474470440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -141,12 +140,12 @@
         <!--Account-->
         <scene sceneID="qrh-8v-yl6">
             <objects>
-                <viewController storyboardIdentifier="CustomerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qWH-0g-gKh" customClass="CustomerViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qWH-0g-gKh" customClass="CustomerViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bf-gu-yPA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2m3-Ad-kES" customClass="StorefrontTableView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2m3-Ad-kES" customClass="StorefrontTableView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="244" width="375" height="423"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,7 +193,7 @@
         <!--View Controller-->
         <scene sceneID="Osg-fv-7jG">
             <objects>
-                <viewController id="YE7-xm-GaW" customClass="ViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YE7-xm-GaW" customClass="ViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sv1-mG-Og3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,12 +218,12 @@
         <!--Intempt Demo Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="CollectionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CollectionsViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CollectionsViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="300" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FJA-Xo-Ook" customClass="StorefrontTableView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="300" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FJA-Xo-Ook" customClass="StorefrontTableView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="173" width="375" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -399,7 +398,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Intempt Demo Shop" id="9WP-3t-7If">
                         <barButtonItem key="leftBarButtonItem" id="hSM-aq-7up"/>
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="6n0-30-yb1" customClass="CartButton" customModule="IntemptShop_Demo" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="6n0-30-yb1" customClass="CartButton" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                             <connections>
                                 <action selector="cartAction:" destination="BYZ-38-t0r" id="faZ-2U-0TL"/>
                             </connections>
@@ -437,7 +436,7 @@
         <!--Cart Navigation Controller-->
         <scene sceneID="90s-gs-WtJ">
             <objects>
-                <navigationController storyboardIdentifier="CartNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YUF-MR-hUq" customClass="CartNavigationController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CartNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YUF-MR-hUq" customClass="CartNavigationController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7h5-ep-TYx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -453,7 +452,7 @@
         <!--Cart-->
         <scene sceneID="UJ7-cb-swN">
             <objects>
-                <viewController storyboardIdentifier="CartViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dau-ev-4t0" customClass="CartViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dau-ev-4t0" customClass="CartViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xXB-tE-Dtm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -485,7 +484,7 @@
                                 <action selector="cancelAction:" destination="dau-ev-4t0" id="CZz-V2-Kra"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="81Q-Gf-tr0" customClass="CartButton" customModule="IntemptShop_Demo" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="81Q-Gf-tr0" customClass="CartButton" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="NO"/>
                             </userDefinedRuntimeAttributes>
@@ -504,12 +503,12 @@
         <!--Products-->
         <scene sceneID="vIO-P4-DiX">
             <objects>
-                <viewController storyboardIdentifier="ProductsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AbI-Ns-2vc" customClass="ProductsViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AbI-Ns-2vc" customClass="ProductsViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xKM-7h-oPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-iD-z0W" customClass="StorefrontCollectionView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l3f-iD-z0W" customClass="StorefrontCollectionView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
@@ -546,7 +545,7 @@
                                 <action selector="back:" destination="AbI-Ns-2vc" id="3Px-sn-Cgv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="gJB-Hs-8wl" customClass="CartButton" customModule="IntemptShop_Demo" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="gJB-Hs-8wl" customClass="CartButton" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                             <connections>
                                 <action selector="cartAction:" destination="AbI-Ns-2vc" id="sLK-yS-Ky3"/>
                             </connections>
@@ -560,12 +559,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nes-dj-osI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="141"/>
+            <point key="canvasLocation" x="1841" y="128"/>
         </scene>
         <!--Details-->
         <scene sceneID="Bqz-yI-NCp">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FDf-If-Fqx" customClass="ProductDetailsViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FDf-If-Fqx" customClass="ProductDetailsViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xvB-Pf-jdl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -591,7 +590,7 @@
                         <viewLayoutGuide key="safeArea" id="5pQ-8E-H6W"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="06T-Eq-F9g">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Wss-qW-p7O" customClass="CartButton" customModule="IntemptShop_Demo" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Wss-qW-p7O" customClass="CartButton" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                             <connections>
                                 <action selector="cartAction:" destination="FDf-If-Fqx" id="sCR-7P-U64"/>
                             </connections>
@@ -605,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC0-fd-D51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482" y="141"/>
+            <point key="canvasLocation" x="2599" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="22L-nZ-ej3">
@@ -628,7 +627,7 @@
         <!--Image View Controller-->
         <scene sceneID="Mok-Ul-a0k">
             <objects>
-                <viewController id="YjN-Wq-G4f" customClass="ImageViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YjN-Wq-G4f" customClass="ImageViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xdf-pA-7Je">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,12 +637,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-jW-ht3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3266" y="-70"/>
+            <point key="canvasLocation" x="3479" y="-81"/>
         </scene>
         <!--Totals View Controller-->
         <scene sceneID="RHL-KK-LA9">
             <objects>
-                <viewController storyboardIdentifier="TotalsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0rU-kT-Sds" customClass="TotalsViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TotalsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0rU-kT-Sds" customClass="TotalsViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Si-l6-BER">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -675,7 +674,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-iY-Oks" customClass="SeparatorView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-iY-Oks" customClass="SeparatorView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="20" width="5" height="5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -758,7 +757,7 @@
         <!--Profile View Controller-->
         <scene sceneID="qyO-MF-KKw">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oae-6F-DX2" customClass="ProfileViewController" customModule="IntemptShop_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oae-6F-DX2" customClass="ProfileViewController" customModule="Intempt_Shop_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4V9-cb-ffH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -769,7 +768,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-Mw-hYF" customClass="SeparatorView" customModule="IntemptShop_Demo" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-Mw-hYF" customClass="SeparatorView" customModule="Intempt_Shop_Sample" customModuleProvider="target">
                                             <rect key="frame" x="20" y="20" width="5" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>

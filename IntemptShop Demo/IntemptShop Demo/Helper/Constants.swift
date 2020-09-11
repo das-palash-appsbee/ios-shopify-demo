@@ -24,7 +24,7 @@ struct API {
     static let baseURL = environment.rawValue
     
     //Endpoints
-    static let segment = "playground" + "/segmentations/latest"
+    static let segment = IntemptConfig.orgId + "/segmentations/latest"
 }
 
 struct IntemptConfig {

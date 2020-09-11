@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:IntemptShop Demo.xcodeproj">
+      location = "group:/Users/palash/Documents/MyProjects/Intempt/ios-shopify-demo/IntemptShop Demo/IntemptShop Demo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
