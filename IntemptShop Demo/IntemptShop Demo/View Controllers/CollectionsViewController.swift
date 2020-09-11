@@ -2,6 +2,7 @@
 
 import UIKit
 import MobileBuySDK
+import Intempt
 
 class CollectionsViewController: UIViewController,productDelegate {
   
@@ -25,7 +26,7 @@ class CollectionsViewController: UIViewController,productDelegate {
     @IBOutlet weak var lbl6: UILabel!
     @IBOutlet weak var blurView: UIView!
     
-    var strFlag = ""
+    var flagProspect = false
 
     fileprivate var collections: PageableArray<CollectionViewModel>!
     fileprivate var collections1: PageableArray<CollectionViewModel>!
@@ -41,10 +42,9 @@ class CollectionsViewController: UIViewController,productDelegate {
             print("Please configure your Intempt profile to proceed.")
             //return
         }
-        
-        
 
-        self.fetchCollections()
+        //self.fetchCollections()
+        self.fetchSegmentWith(sourceId: IntemptConfig.sourceId, visitorId: (IntemptClient.shared()?.getVisitorId())!)
 
         self.lbl1.text = "Accessories"
         self.lbl2.text = "Pants"
@@ -72,34 +72,80 @@ class CollectionsViewController: UIViewController,productDelegate {
     }
     
 
-    //  MARK: - Fetching -
+    //  MARK: - Fetching products -
     
     fileprivate func fetchCollections(after cursor: String? = nil) {
         
-        
         Client.shared.fetchCollections(after: cursor) { collections in
             if let collections = collections {
-                if collections.items.count > 0
-                {
+                if collections.items.count > 0 {
                     self.blurView.isHidden = true
                 }
-                else
-                {
+                else{
                     self.blurView.isHidden = false
                 }
-                
-
-                print("data---\(collections.items)")
+                //print("data---\(collections.items)")
 
 
                 self.collections = collections
+                self.tableView.dataSource = self
+                self.tableView.delegate = self
                 self.tableView.reloadData()
-                
             }
         }
     }
     
-    //  MARK: - View Controllers -
+    private func fetchSegmentWith(sourceId:String, visitorId:String) {
+        
+        //let strUrl = API.baseURL + API.segment + "?sourceId=\(sourceId)&profile={\"visitorId\":\"\(visitorId)\"}"
+        let strUrl = API.baseURL + "playground/segmentations/latest?profileId=120946287348477954"
+        
+        guard let urlQuery = strUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlQuery) else {
+            showAlert(title: AppTitle, message: "URL is not valid.", vc: self)
+            return
+        }
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 180)
+        request.httpMethod = "GET"
+        
+        print("Request URL: \(urlQuery)")
+
+        let session = URLSession.init(configuration: .default, delegate: nil, delegateQueue: OperationQueue())
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            DispatchQueue.main.async {
+                
+                if error != nil {
+                    showAlert(title: AppTitle, message: error?.localizedDescription ?? "No specific error found.", vc: self)
+                }
+                else {
+                    print("API Segmentation Response:\(String(decoding: data!, as: UTF8.self))")
+                    
+                    do {
+                        let dictJson = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves)
+                        
+                        if let dictOriginal = dictJson as? [String:Any], let dictEmbedded = dictOriginal["_embedded"] as? [String:Any], let arrSegmentations = dictEmbedded["segmentations"] as? [[String:Any]]  {
+                            
+                            for dictSegment in arrSegmentations {
+                                if let saasProspectStatus = dictSegment["saas-prospect"] as? Bool {
+                                    self.flagProspect = saasProspectStatus
+                                    break
+                                }
+                            }
+                        }
+                    }
+                    catch let err {
+                        showAlert(title: AppTitle, message: err.localizedDescription, vc: self)
+                    }
+                    self.clickAction(self)
+                    self.fetchCollections()
+                }
+            }
+        }
+        dataTask.resume()
+    }
+    
+    //  MARK: - Navigate to Product -
 
     func productsViewControllerWith(_ collection: CollectionViewModel) -> ProductsViewController {
         let controller: ProductsViewController = self.storyboard!.instantiateViewController()
@@ -125,7 +171,7 @@ extension CollectionsViewController {
     @IBAction private func clickCollectionAction(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[1]
                 self.productsList(collection: collection)
                 
@@ -136,7 +182,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 1 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[2]
                 self.productsList(collection: collection)
                     
@@ -148,7 +194,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 2 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[3]
                 self.productsList(collection: collection)
                 
@@ -159,7 +205,7 @@ extension CollectionsViewController {
             }
         }
         else if sender.tag == 3 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[10]
                 self.productsList(collection: collection)
             }
@@ -169,7 +215,7 @@ extension CollectionsViewController {
             }
         }
         else  if sender.tag == 4 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[11]
                 self.productsList(collection: collection)
 
@@ -180,7 +226,7 @@ extension CollectionsViewController {
             }
         }
         else if sender.tag == 5 {
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 let collection = self.collections.items[8]
                 let productsController = self.productsViewControllerWith(collection)
                 productsController.delegate = self
@@ -201,7 +247,7 @@ extension CollectionsViewController {
     func changeEvent(str: String) {
           UIView.animate(withDuration: 1.0) {
                   
-            if self.strFlag == "" {
+            if self.flagProspect == false {
                 self.bannerImage.image = UIImage.init(named: "2.png")
                 self.img1.image = UIImage.init(named: "A1.png")
                 self.img2.image = UIImage.init(named: "A2.png")
@@ -219,7 +265,7 @@ extension CollectionsViewController {
                 self.lbl5.text = "Midi dresses"
                 self.lbl6.text = "Off-the-shoulder dresses"
 
-                self.strFlag = "1"
+                self.flagProspect = true
             }
             else {
                 self.bannerImage.image = UIImage.init(named: "2.png")
@@ -239,7 +285,7 @@ extension CollectionsViewController {
                 self.lbl5.text = "Shoes"
                 self.lbl6.text = "Dresses"
     
-                self.strFlag = ""
+                self.flagProspect = false
             }
         }
     }
@@ -247,7 +293,7 @@ extension CollectionsViewController {
     @IBAction private func clickAction(_ sender: Any) {
         UIView.animate(withDuration: 1.0) {
             
-            if self.strFlag == "" {
+            if self.flagProspect == true {
                 self.bannerImage.image = UIImage.init(named: "2.png")
                 self.img1.image = UIImage.init(named: "A1.png")
                 self.img2.image = UIImage.init(named: "A2.png")
@@ -265,7 +311,7 @@ extension CollectionsViewController {
                 self.lbl5.text = "Midi dresses"
                 self.lbl6.text = "Off-the-shoulder dresses"
 
-                self.strFlag = "1"
+                //self.flagProspect = true
             }
             else {
                 self.bannerImage.image = UIImage.init(named: "1.png")
@@ -287,7 +333,7 @@ extension CollectionsViewController {
                 self.lbl5.text = "Shoes"
                 self.lbl6.text = "Dresses"
                 
-                self.strFlag = ""
+                //self.flagProspect = false
             }
         }
     }
