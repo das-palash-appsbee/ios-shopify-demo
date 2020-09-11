@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0707552508D114005E1199 /* Intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0707532508CFC0005E1199 /* Intempt.framework */; };
+		0C0707562508D115005E1199 /* Intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0707532508CFC0005E1199 /* Intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C3542B424FFC1270023C271 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3542B324FFC1270023C271 /* Constants.swift */; };
 		0C6813B4250B75E300A49B6A /* Intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6813B2250B753700A49B6A /* Intempt.framework */; };
 		0C6813B5250B75E300A49B6A /* Intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6813B2250B753700A49B6A /* Intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -113,6 +115,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0C6813B5250B75E300A49B6A /* Intempt.framework in Embed Frameworks */,
+
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C0707532508CFC0005E1199 /* Intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Intempt.framework; sourceTree = "<group>"; };
 		0C3542B324FFC1270023C271 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C6813B2250B753700A49B6A /* Intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intempt.framework; path = "../../../intempt-ios-demo/Intempt Demo Shop/Intempt Demo Shop/Intempt.framework"; sourceTree = "<group>"; };
 		234D9CE4B98630E783BE93B6 /* Pods-IntemptShop Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntemptShop Demo.debug.xcconfig"; path = "Target Support Files/Pods-IntemptShop Demo/Pods-IntemptShop Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -866,6 +870,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
+
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
