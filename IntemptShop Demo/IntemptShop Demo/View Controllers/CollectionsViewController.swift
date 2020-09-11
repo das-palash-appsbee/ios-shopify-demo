@@ -97,8 +97,8 @@ class CollectionsViewController: UIViewController,productDelegate {
     
     private func fetchSegmentWith(sourceId:String, visitorId:String) {
         
-        //let strUrl = API.baseURL + API.segment + "?sourceId=\(sourceId)&profile={\"visitorId\":\"\(visitorId)\"}"
-        let strUrl = API.baseURL + "playground/segmentations/latest?profileId=120946287348477954"
+        let strUrl = API.baseURL + API.segment + "?sourceId=\(sourceId)&profile={\"visitorId\":\"\(visitorId)\"}"
+        //let strUrl = API.baseURL + "playground/segmentations/latest?profileId=120946287348477954"
         
         guard let urlQuery = strUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlQuery) else {
             showAlert(title: AppTitle, message: "URL is not valid.", vc: self)
@@ -129,8 +129,12 @@ class CollectionsViewController: UIViewController,productDelegate {
                             for dictSegment in arrSegmentations {
                                 if let saasProspectStatus = dictSegment["saas-prospect"] as? Bool {
                                     self.flagProspect = saasProspectStatus
-                                    break
+                                    
                                 }
+                                /*if let dressBuyer = dictSegment["dress-buyer"] as? Bool {
+                                    self.flagProspect = dressBuyer
+                                    break
+                                }*/
                             }
                         }
                     }
