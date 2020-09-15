@@ -3,6 +3,9 @@
 
 import UIKit
 import MobileBuySDK
+import UserNotifications
+import Intempt
+
 protocol productDelegate: class {
     func changeEvent(str : String)
 }
@@ -21,7 +24,10 @@ class ProductsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true);
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        IntemptTracker.beacon(withOrgId: BeaconConfig.orgId, andSourceId: BeaconConfig.sourceId, andToken: BeaconConfig.token, andDeviceUUID:BeaconConfig.uuid)
+        IntemptClient.shared()?.delegate = self
 
         self.configureCollectionView()
         
@@ -56,6 +62,25 @@ class ProductsViewController: UIViewController {
     @IBAction func cartAction(_ sender: Any) {
         let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
         self.navigationController!.present(cartController, animated: true, completion: nil)
+    }
+    
+    // MARK: Notifcations Methods
+    
+    func postNotification(body:String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Greetings!"
+        content.body = body
+        content.sound = UNNotificationSound.default
+        let request = UNNotificationRequest(identifier: "EntryNotification", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
     }
 }
 
@@ -155,6 +180,7 @@ extension ProductsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
+
 //  MARK: - UICollectionViewDelegate -
 
 extension ProductsViewController: UICollectionViewDelegate {
@@ -166,4 +192,17 @@ extension ProductsViewController: UICollectionViewDelegate {
 
         collectionView.deselectItem(at: indexPath, animated: true)
     }
+}
+
+extension ProductsViewController:intemptDelegate {
+    // MARK: iBeacon Delegate Methods
+    
+    func didEnterRegion(_ beaconData: CLBeacon!) {
+        self.postNotification(body: "You entered in the store")
+    }
+    
+    func didExitRegion(_ beaconData: CLBeacon!) {
+        self.postNotification(body: "You exited from the store!")
+    }
+
 }

@@ -488,8 +488,8 @@
 				EDFADF6024FA322E0076A1FE /* LoginViewController.swift */,
 				EDFADF5A24FA322E0076A1FE /* AccountController.swift */,
 				EDFADF5F24FA322E0076A1FE /* CollectionsViewController.swift */,
-				EDFADF7524FA32530076A1FE /* ProductDetailsViewController.swift */,
 				EDFADF7724FA32530076A1FE /* ProductsViewController.swift */,
+				EDFADF7524FA32530076A1FE /* ProductDetailsViewController.swift */,
 				EDFADF7C24FA32530076A1FE /* CartNavigationController.swift */,
 				EDFADF7124FA32530076A1FE /* CartViewController.swift */,
 				EDFADF7924FA32530076A1FE /* TotalsViewController.swift */,
@@ -595,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORK=\"Intempt\"\nFRAMEWORK_EXECUTABLE_PATH=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.framework/$FRAMEWORK\"\n\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\n\nrm \"${EXTRACTED_ARCHS[@]}\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH”\n";
+			shellScript = "FRAMEWORK=\"Intempt\"\nFRAMEWORK_EXECUTABLE_PATH=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.framework/$FRAMEWORK\"\n\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\n\nrm \"${EXTRACTED_ARCHS[@]}\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n";
 		};
 		3625AE2974004592B9E3B2E1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -774,7 +774,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -836,7 +836,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -866,7 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
@@ -884,7 +884,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "Retail Sample";
-				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemoDist;
+				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -896,7 +896,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
@@ -914,7 +914,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "Retail Sample";
-				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemoDist;
+				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
