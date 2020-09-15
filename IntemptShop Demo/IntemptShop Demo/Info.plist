@@ -26,6 +26,10 @@
 	<string>This app uses Bluetooth communication to detect nearby beacons</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This app uses Bluetooth communication to detect nearby beacons</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location used to track where you are</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location used to track where you are</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
