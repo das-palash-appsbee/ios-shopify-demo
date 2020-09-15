@@ -35,6 +35,16 @@ struct IntemptConfig {
     static let token = "ST-JuK8lbjIMD_NDdj0ibYVtLM0tGKyo.cyptoYSlnwCm-LXNiTcAdT_gt5z82fE59EZ8antlMm1L835BvMPiAwwS8hYtch1U" //Example: jAxLS9GWwxGHbJWQAMIDG3tWvDP53e4
 }
 
+// This is optional. If you use beacon fetaures then only you should use this
+struct BeaconConfig {
+//Please go to https://app.intempt.com/home create an beacon app and obtain Intempt credentials
+
+    static let orgId = "playground"
+    static let sourceId = "137253757784113152"
+    static let token = "Ik2awm7NSaQrtp1PEm77V7bpxUnvwVzK.1YUZHo5e4jnGtZPO3wI0zUJySAG9rdgwNjX-U1uOT62G5lAeq_05li1DPhfOkDpu"
+    static let uuid = "f2789bb4-39e3-46bd-98f0-4c1212d13c87" //Example: f2789bb4-39e3-46bd-98f0-4c1212d13c87
+}
+
 
 struct Shopify {
     //Please go to https://shopify.dev/tools/libraries/storefront-api/ios and obtain credentials

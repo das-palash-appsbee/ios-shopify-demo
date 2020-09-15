@@ -2,6 +2,7 @@
 
 import UIKit
 
+
 private enum CellKind: Int {
     case header
     case details
