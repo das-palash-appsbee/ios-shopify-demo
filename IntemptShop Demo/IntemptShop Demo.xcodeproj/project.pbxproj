@@ -774,7 +774,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -836,7 +836,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -866,7 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
@@ -884,7 +884,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "Retail Sample";
-				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemoDist;
+				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -896,7 +896,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "IntemptShop Demo/IntemptShop Demo.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Intempt Technologies LLC (A3K7YHSW33)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
@@ -914,7 +914,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.shopifydemo.com;
 				PRODUCT_NAME = "Retail Sample";
-				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemoDist;
+				PROVISIONING_PROFILE_SPECIFIER = ShopifyDemo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
