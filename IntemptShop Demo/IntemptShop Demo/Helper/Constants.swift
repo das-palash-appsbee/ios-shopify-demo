@@ -12,6 +12,7 @@ import UIKit
 let AppTitle = Bundle.main.object(forInfoDictionaryKey:"CFBundleName") as! String
 let stroryboard = UIStoryboard(name: "Main", bundle: nil)
 let appDel = UIApplication.shared.delegate as! AppDelegate
+let flagKey = "saas-prospect"
 
 enum Environment: String {
     case staging = "https://api.staging.intempt.com/v1/"
