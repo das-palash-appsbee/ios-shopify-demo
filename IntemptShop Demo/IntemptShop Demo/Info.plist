@@ -32,6 +32,8 @@
 	<string>Location used to track where you are</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Location used to track where you are</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location used to track where you are</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
