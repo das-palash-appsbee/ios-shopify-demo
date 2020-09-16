@@ -127,7 +127,7 @@ class CollectionsViewController: UIViewController,productDelegate {
                         if let dictOriginal = dictJson as? [String:Any], let dictEmbedded = dictOriginal["_embedded"] as? [String:Any], let arrSegmentations = dictEmbedded["segmentations"] as? [[String:Any]]  {
                             
                             for dictSegment in arrSegmentations {
-                                if let saasProspectStatus = dictSegment["saas-prospect"] as? Bool {
+                                if let saasProspectStatus = dictSegment[flagKey] as? Bool {
                                     self.flagProspect = saasProspectStatus
                                     
                                 }
