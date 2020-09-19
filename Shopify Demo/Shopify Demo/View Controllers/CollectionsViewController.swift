@@ -1,7 +1,7 @@
 
 
 import UIKit
-import MobileBuySDK
+import Buy
 import Intempt
 
 class CollectionsViewController: UIViewController,productDelegate {

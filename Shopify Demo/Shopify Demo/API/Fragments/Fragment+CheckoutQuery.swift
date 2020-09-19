@@ -1,5 +1,5 @@
 
-import MobileBuySDK
+import Buy
 extension Storefront.CheckoutQuery {
     
     @discardableResult

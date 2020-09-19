@@ -1,7 +1,7 @@
 
 
 import Foundation
-import MobileBuySDK
+import Buy
 final class VariantViewModel: ViewModel {
     
     typealias ModelType = Storefront.ProductVariantEdge

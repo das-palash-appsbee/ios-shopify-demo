@@ -1,7 +1,7 @@
 
 
-import MobileBuySDK
-
+import Buy
+import Pay
 extension ShippingRateViewModel {
     
     var payShippingRate: PayShippingRate {

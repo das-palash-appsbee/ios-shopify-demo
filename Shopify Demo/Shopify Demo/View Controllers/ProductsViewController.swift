@@ -2,7 +2,7 @@
 //
 
 import UIKit
-import MobileBuySDK
+import Buy
 import UserNotifications
 import Intempt
 

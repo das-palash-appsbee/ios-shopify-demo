@@ -1,6 +1,6 @@
 
 import Foundation
-import MobileBuySDK
+import Buy
 
 final class PaymentViewModel: ViewModel {
     
