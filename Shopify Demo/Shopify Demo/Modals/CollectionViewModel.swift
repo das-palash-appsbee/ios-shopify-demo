@@ -1,7 +1,7 @@
 
 
 import Foundation
-import MobileBuySDK
+import Buy
 final class CollectionViewModel: ViewModel {
     
     typealias ModelType = Storefront.CollectionEdge

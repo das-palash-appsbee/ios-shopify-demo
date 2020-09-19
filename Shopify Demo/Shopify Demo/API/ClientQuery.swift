@@ -1,8 +1,8 @@
 
 
 import Foundation
-import MobileBuySDK
-import MobileBuySDK
+import Buy
+import Pay
 
 final class ClientQuery {
 

@@ -1,6 +1,6 @@
 
 
-import MobileBuySDK
+import Buy
 
 final class DiscountCodeViewModel: DiscountApplication, ViewModel {
     
