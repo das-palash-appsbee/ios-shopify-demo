@@ -1,11 +1,15 @@
 
 
 import UIKit
-
+import Intempt
 
 private enum CellKind: Int {
     case header
     case details
+}
+
+protocol ProductDetailsDelegate: class {
+    func changeEvent(status : Bool)
 }
 
 class ProductDetailsViewController: ParallaxViewController {
@@ -13,9 +17,9 @@ class ProductDetailsViewController: ParallaxViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     var product: ProductViewModel!
-    
+    var delegate:ProductDetailsDelegate?
     private var imageViewController: ImageViewController!
-    
+    var isAddedToCart:Bool = false
     
     //  MARK: - Segue -
     
@@ -35,6 +39,10 @@ class ProductDetailsViewController: ParallaxViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Products", style: UIBarButtonItem.Style.done, target: self, action: #selector(back(_:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         
         self.registerTableCells()
         
@@ -69,6 +77,12 @@ class ProductDetailsViewController: ParallaxViewController {
         let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
         self.navigationController!.present(cartController, animated: true, completion: nil)
     }
+    
+    @objc func back(_ sender: UIBarButtonItem) {
+        delegate?.changeEvent(status: isAddedToCart)
+        self.navigationController?.popViewController(animated: true)
+        
+    }
 }
 
 
@@ -80,6 +94,20 @@ extension ProductDetailsViewController: ProductHeaderDelegate {
     func productHeader(_ cell: ProductHeaderCell, didAddToCart sender: Any) {
         let item = CartItem(product: self.product, variant: self.product.variants.items[0])
         CartController.shared.add(item)
+        
+        let arrProductBuy = NSMutableArray()
+        let dictProductBuy = NSMutableDictionary()
+
+        dictProductBuy.setValue(self.product.title, forKey: "productName")
+        let price = self.product.variants.items.first?.price
+        dictProductBuy.setValue(price, forKey: "amount")
+        dictProductBuy.setValue(true, forKey: "successfulTransaction")
+         
+        arrProductBuy.add(dictProductBuy)
+        print("Product added to carts: \(arrProductBuy)")
+        IntemptTracker.track("Purchase", withProperties: arrProductBuy as? [Any], error: nil)
+        
+        isAddedToCart = true
     }
 }
 

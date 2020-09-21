@@ -4,7 +4,7 @@ import UIKit
 import Buy
 import Intempt
 
-class CollectionsViewController: UIViewController,productDelegate {
+class CollectionsViewController: UIViewController {
   
     @IBOutlet weak var tableView: StorefrontTableView!
     @IBOutlet weak var bannerImage: UIImageView!
@@ -129,12 +129,7 @@ class CollectionsViewController: UIViewController,productDelegate {
                             for dictSegment in arrSegmentations {
                                 if let saasProspectStatus = dictSegment[flagKey] as? Bool {
                                     self.flagProspect = saasProspectStatus
-                                    
                                 }
-                                /*if let dressBuyer = dictSegment["dress-buyer"] as? Bool {
-                                    self.flagProspect = dressBuyer
-                                    break
-                                }*/
                             }
                         }
                     }
@@ -153,6 +148,7 @@ class CollectionsViewController: UIViewController,productDelegate {
 
     func productsViewControllerWith(_ collection: CollectionViewModel) -> ProductsViewController {
         let controller: ProductsViewController = self.storyboard!.instantiateViewController()
+        controller.delegate = self
         controller.collection = collection
         return controller
     }
@@ -245,53 +241,8 @@ extension CollectionsViewController {
 
     func productsList(collection: CollectionViewModel) {
         let productsController = self.productsViewControllerWith(collection)
+        productsController.delegate = self
         self.navigationController?.pushViewController(productsController, animated: true)
-    }
-    
-    func changeEvent(str: String) {
-          UIView.animate(withDuration: 1.0) {
-                  
-            if self.flagProspect == false {
-                self.bannerImage.image = UIImage.init(named: "2.png")
-                self.img1.image = UIImage.init(named: "A1.png")
-                self.img2.image = UIImage.init(named: "A2.png")
-                self.img3.image = UIImage.init(named: "A3.png")
-                self.img4.image = UIImage.init(named: "A4.png")
-                self.img5.image = UIImage.init(named: "A5.png")
-                self.img6.image = UIImage.init(named: "dress1.png")
-                self.img7.image = UIImage.init(named: "i13.png")
-                self.img8.image = UIImage.init(named: "i16.png")
-        
-                self.lbl1.text = "A-line dresses"
-                self.lbl2.text = "Mini dresses"
-                self.lbl3.text = "Shift dresses"
-                self.lbl4.text = "Bodycon dresses"
-                self.lbl5.text = "Midi dresses"
-                self.lbl6.text = "Off-the-shoulder dresses"
-
-                self.flagProspect = true
-            }
-            else {
-                self.bannerImage.image = UIImage.init(named: "2.png")
-                self.img1.image = UIImage.init(named: "bag.png")
-                self.img2.image = UIImage.init(named: "pants.png")
-                self.img3.image = UIImage.init(named: "sale.png")
-                self.img4.image = UIImage.init(named: "jackets.png")
-                self.img5.image = UIImage.init(named: "shoes.png")
-                self.img6.image = UIImage.init(named: "dress.png")
-                self.img7.image = UIImage.init(named: "i13.png")
-                self.img8.image = UIImage.init(named: "i16.png")
-
-                self.lbl1.text = "Accessories"
-                self.lbl2.text = "Pants"
-                self.lbl3.text = "Sale"
-                self.lbl4.text = "Jackets"
-                self.lbl5.text = "Shoes"
-                self.lbl6.text = "Dresses"
-    
-                self.flagProspect = false
-            }
-        }
     }
       
     @IBAction private func clickAction(_ sender: Any) {
@@ -471,8 +422,74 @@ extension CollectionsViewController: UITableViewDataSource {
 extension CollectionsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let collection         = self.collections.items[indexPath.section]
+        let collection = self.collections.items[indexPath.section]
         let productsController = self.productsViewControllerWith(collection)
+        productsController.delegate = self
         self.navigationController!.show(productsController, sender: self)
     }
 }
+
+
+//  MARK: - ProductsDelegate
+
+extension CollectionsViewController: productDelegate {
+    func changeEvent(status:Bool) {
+        
+        if status {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.blurView.isHidden = false
+                self.fetchSegmentWith(sourceId: IntemptConfig.sourceId, visitorId: (IntemptClient.shared()?.getVisitorId())!)
+            }
+        }
+        
+        
+        
+          /*UIView.animate(withDuration: 1.0) {
+                  
+            if self.flagProspect == false {
+                self.bannerImage.image = UIImage.init(named: "2.png")
+                self.img1.image = UIImage.init(named: "A1.png")
+                self.img2.image = UIImage.init(named: "A2.png")
+                self.img3.image = UIImage.init(named: "A3.png")
+                self.img4.image = UIImage.init(named: "A4.png")
+                self.img5.image = UIImage.init(named: "A5.png")
+                self.img6.image = UIImage.init(named: "dress1.png")
+                self.img7.image = UIImage.init(named: "i13.png")
+                self.img8.image = UIImage.init(named: "i16.png")
+        
+                self.lbl1.text = "A-line dresses"
+                self.lbl2.text = "Mini dresses"
+                self.lbl3.text = "Shift dresses"
+                self.lbl4.text = "Bodycon dresses"
+                self.lbl5.text = "Midi dresses"
+                self.lbl6.text = "Off-the-shoulder dresses"
+
+                self.flagProspect = true
+            }
+            else {
+                self.bannerImage.image = UIImage.init(named: "2.png")
+                self.img1.image = UIImage.init(named: "bag.png")
+                self.img2.image = UIImage.init(named: "pants.png")
+                self.img3.image = UIImage.init(named: "sale.png")
+                self.img4.image = UIImage.init(named: "jackets.png")
+                self.img5.image = UIImage.init(named: "shoes.png")
+                self.img6.image = UIImage.init(named: "dress.png")
+                self.img7.image = UIImage.init(named: "i13.png")
+                self.img8.image = UIImage.init(named: "i16.png")
+
+                self.lbl1.text = "Accessories"
+                self.lbl2.text = "Pants"
+                self.lbl3.text = "Sale"
+                self.lbl4.text = "Jackets"
+                self.lbl5.text = "Shoes"
+                self.lbl6.text = "Dresses"
+
+                self.flagProspect = false
+            }
+        }*/
+    }
+    
+}
+
+
+

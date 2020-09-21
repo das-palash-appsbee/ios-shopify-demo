@@ -7,7 +7,7 @@ import UserNotifications
 import Intempt
 
 protocol productDelegate: class {
-    func changeEvent(str : String)
+    func changeEvent(status : Bool)
 }
 class ProductsViewController: UIViewController {
     
@@ -16,7 +16,7 @@ class ProductsViewController: UIViewController {
     var graph: Graph!
     var collection: CollectionViewModel!
     var delegate: productDelegate?
-
+    var isCartUpdated:Bool = false
     fileprivate let columns: Int = 2
     fileprivate var products: PageableArray<ProductViewModel>!
     
@@ -47,7 +47,7 @@ class ProductsViewController: UIViewController {
     //  MARK: - Actions -
     
     @IBAction private func back(_ sender: UIBarButtonItem) {
-        //self.delegate?.changeEvent(str: "1")
+        delegate?.changeEvent(status: isCartUpdated)
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -188,9 +188,16 @@ extension ProductsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = self.products.items[indexPath.item]
         let controller = productDetailsViewControllerWith(product)
+        controller.delegate = self
         self.navigationController!.show(controller, sender: self)
 
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+extension ProductsViewController: ProductDetailsDelegate {
+    func changeEvent(status: Bool) {
+        isCartUpdated = status
     }
 }
 
