@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C08735E25166C0D00D2FC77 /* Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08735D25166C0D00D2FC77 /* Pay.framework */; };
+		0C08735F25166C0D00D2FC77 /* Pay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08735D25166C0D00D2FC77 /* Pay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C08736125166C1C00D2FC77 /* Buy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08736025166C1C00D2FC77 /* Buy.framework */; };
+		0C08736225166C1C00D2FC77 /* Buy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08736025166C1C00D2FC77 /* Buy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C3542B424FFC1270023C271 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3542B324FFC1270023C271 /* Constants.swift */; };
 		0C4D74EB251376E4001F4300 /* Intempt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4D74E9251376DF001F4300 /* Intempt.framework */; };
 		0C4D74EC251376E4001F4300 /* Intempt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4D74E9251376DF001F4300 /* Intempt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,10 +49,6 @@
 		0CFCC0BD25162DDD009CBE9D /* ClientQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCC0B125162DDD009CBE9D /* ClientQuery.swift */; };
 		0CFCC0BE25162DDD009CBE9D /* GraphQL+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCC0B225162DDD009CBE9D /* GraphQL+Serializable.swift */; };
 		0CFCC0BF25162DDD009CBE9D /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCC0B325162DDD009CBE9D /* Client.swift */; };
-		0CFCC0EA25163F92009CBE9D /* Buy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFCC0E825163F92009CBE9D /* Buy.framework */; };
-		0CFCC0EB25163F92009CBE9D /* Buy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFCC0E825163F92009CBE9D /* Buy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0CFCC0EC25163F93009CBE9D /* Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFCC0E925163F92009CBE9D /* Pay.framework */; };
-		0CFCC0ED25163F93009CBE9D /* Pay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CFCC0E925163F92009CBE9D /* Pay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED6C22AC24FE3D9700F4F740 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6C22AB24FE3D9700F4F740 /* PushManager.swift */; };
 		EDFADEBF24FA2E2A0076A1FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */; };
 		EDFADEC624FA2E2C0076A1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDFADEC524FA2E2C0076A1FE /* Assets.xcassets */; };
@@ -116,8 +116,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0C4D74EC251376E4001F4300 /* Intempt.framework in Embed Frameworks */,
-				0CFCC0EB25163F92009CBE9D /* Buy.framework in Embed Frameworks */,
-				0CFCC0ED25163F93009CBE9D /* Pay.framework in Embed Frameworks */,
+				0C08735F25166C0D00D2FC77 /* Pay.framework in Embed Frameworks */,
+				0C08736225166C1C00D2FC77 /* Buy.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +125,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C08735D25166C0D00D2FC77 /* Pay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pay.framework; path = "Shopify Demo/Pay.framework"; sourceTree = "<group>"; };
+		0C08736025166C1C00D2FC77 /* Buy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Buy.framework; path = "Shopify Demo/Buy.framework"; sourceTree = "<group>"; };
 		0C3542B324FFC1270023C271 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0C4D74E825137590001F4300 /* Retail Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Retail Sample.entitlements"; sourceTree = "<group>"; };
 		0C4D74E9251376DF001F4300 /* Intempt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Intempt.framework; sourceTree = "<group>"; };
@@ -163,10 +165,6 @@
 		0CFCC0B125162DDD009CBE9D /* ClientQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientQuery.swift; sourceTree = "<group>"; };
 		0CFCC0B225162DDD009CBE9D /* GraphQL+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GraphQL+Serializable.swift"; sourceTree = "<group>"; };
 		0CFCC0B325162DDD009CBE9D /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		0CFCC0E125163E73009CBE9D /* Buy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Buy.framework; path = ../Carthage/Build/iOS/Buy.framework; sourceTree = "<group>"; };
-		0CFCC0E225163E73009CBE9D /* Pay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pay.framework; path = ../Carthage/Build/iOS/Pay.framework; sourceTree = "<group>"; };
-		0CFCC0E825163F92009CBE9D /* Buy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Buy.framework; path = "Shopify Demo/Buy.framework"; sourceTree = "<group>"; };
-		0CFCC0E925163F92009CBE9D /* Pay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pay.framework; path = "Shopify Demo/Pay.framework"; sourceTree = "<group>"; };
 		ED6C22AB24FE3D9700F4F740 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		EDFADEB924FA2E2A0076A1FE /* Retail Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Retail Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFADEBE24FA2E2A0076A1FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,8 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C4D74EB251376E4001F4300 /* Intempt.framework in Frameworks */,
-				0CFCC0EA25163F92009CBE9D /* Buy.framework in Frameworks */,
-				0CFCC0EC25163F93009CBE9D /* Pay.framework in Frameworks */,
+				0C08735E25166C0D00D2FC77 /* Pay.framework in Frameworks */,
+				0C08736125166C1C00D2FC77 /* Buy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,10 +351,8 @@
 		4A5D63C718B1046768CBAD73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0CFCC0E825163F92009CBE9D /* Buy.framework */,
-				0CFCC0E925163F92009CBE9D /* Pay.framework */,
-				0CFCC0E125163E73009CBE9D /* Buy.framework */,
-				0CFCC0E225163E73009CBE9D /* Pay.framework */,
+				0C08736025166C1C00D2FC77 /* Buy.framework */,
+				0C08735D25166C0D00D2FC77 /* Pay.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -836,6 +832,10 @@
 					"$(PROJECT_DIR)/Shopify\\ Demo",
 					"$(PROJECT_DIR)/Shopify\\ Demo",
 					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
 				);
 				INFOPLIST_FILE = "Shopify Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -865,6 +865,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/$(PROJECT_NAME)\\ Demo",
 					"$(PROJECT_DIR)/$(PROJECT_NAME)\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
+					"$(PROJECT_DIR)/Shopify\\ Demo",
 					"$(PROJECT_DIR)/Shopify\\ Demo",
 					"$(PROJECT_DIR)/Shopify\\ Demo",
 					"$(PROJECT_DIR)/Shopify\\ Demo",
