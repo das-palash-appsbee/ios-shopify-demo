@@ -171,7 +171,7 @@ Get Intempt Visitor ID
 
 
 // defines the TBLog macro
-#define INTEMPT_LOGGING_ENABLED [IntemptClient loggingEnabled]
+#define INTEMPT_LOGGING_ENABLED [IIntemptClient loggingEnabled]
 #define TBLog(message, ...)if([IntemptClient isLoggingEnabled]) NSLog(message, ##__VA_ARGS__)
 
 @end
