@@ -10,65 +10,51 @@
 #define IntemptTracker_h
 @import UIKit;
 
+typedef void(^CompletionHandler)(BOOL status, NSError *error);
+
 @interface IntemptTracker : NSObject
 
 /**
- Please add description.
+ Call this method from ScenseDelegate's `scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)` or AppDelegate's  `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)` for your app to start tracker during launch. Alternatively you can call this method at any ViewController's  `viewDidLoad` method. Wherever you call it will initilaze & track the whole app.
  @param orgId  Your Intempt Organization ID generated from intempt developer console
  @param sourceId Your Intempt Source ID generated from intempt developer console
- @param token Your Intempt Source token generated from intempt developer console
+ @param token Your Intempt Source Token generated from intempt developer console
+ @note iOS 13 above should implement it on ScenseDelegate
 */
 + (void)trackingWithOrgId:(NSString*)orgId andSourceId:(NSString*)sourceId andToken:(NSString*)token;
 
 /**
- This will authorize geo location always (iOS 8 and above). You must also add NSLocationAlwaysUsageDescription string to Info.plist to
- authorize geo location always (foreground and background)
- @note From iOS 13 user can't grant location tracking 'always' from app. A user need to go to app settings to manually enable it.
-*/
-+ (void)enableGeoLocationAlways;
-
-/**
- This will authorize geo location when in use (iOS 8 and above). You must also add NSLocationWhenInUsageDescription string to Info.plist to
- authorize geo location when in use (foreground)
-*/
-+ (void)enableGeoLocationInUse;
-
-/**
-Please add description.
- @param identity An Identity
- @param userProperties A dictionary of user properties
- @param error A NSError object
+ Use this method when you want to set a unique identifier (email or phone no.) for your app.
+ @param identity An Identity i.e, email address or phone number
+ @param userProperties A dictionary of user properties (set accroding to your custom schema's parameters on intempt developer site)
  @note In Swift you can pass Error object instead of NSError as error
 */
-+ (void)identify:(NSString*)identity withProperties:(NSDictionary*)userProperties error:(NSError**)error;
++ (void)identify:(NSString*)identity withProperties:(NSDictionary*)userProperties withCompletion:(CompletionHandler)handler;
 
 /**
-Please add description.
- @param event A Dictionary value
- @param eventCollection A String value
- @param error A NSError object
- @note In Swift you can pass Error object instead of NSError as error
- @return If event is added it will return YES otherwise NO
-*/
-+ (BOOL)addEvent:(NSDictionary*)event toEventCollection:(NSString*)eventCollection error:(NSError**)error;
-
-/**
-Please add description.
- @param collectionName A collection name
- @param userProperties An Array of user properties
- @param error A NSError object
+ Use this method when you specific tracking information to server. Creating custom Schema is mandatory to use this method. Go to your project on https://app.intempt.com and click on `Visit Schema` to add custom Schema
+ @param collectionName Custom Schema name (Exclude the unique id)
+ @param userProperties An Array of user properties which should be the same parameters you added in your custom schema
  @note In Swift you can pass Error object instead of NSError as error
 */
-+ (void)track:(NSString*)collectionName withProperties:(NSArray*)userProperties error:(NSError**)error;
++ (void)track:(NSString*)collectionName withProperties:(NSArray*)userProperties withCompletion:(CompletionHandler)handler;
 
 /**
-Please add description.
+ Call this method from any ViewController's  `viewDidLoad` method to initilaze the beacon for the app.
  @param orgId  Your Intempt Organization ID generated from intempt developer console
  @param sourceId Your Intempt Source ID generated from intempt developer console
- @param token Your Intempt Source token generated from intempt developer console
- @param uuid A device UUID
+ @param token Your Intempt Source Token generated from intempt developer console
+ @param uuid A beacon UUID
 */
 + (void)beaconWithOrgId:(NSString*)orgId andSourceId:(NSString*)sourceId andToken:(NSString*)token andDeviceUUID:(NSString*)uuid;
+
+/**
+ Use this method when you want to set a unique identifier (email or phone no.) for your app. Its an alternative to default identify method and more likely you didn't enable tracking for the app.
+ @param identity An Identity i.e, email address or phone number
+ @param userProperties A dictionary of user properties (set accroding to your custom schema's parameters on intempt developer site)
+ @note In Swift you can pass Error object instead of NSError as error
+*/
++ (void)identifyUsingBeaconWith:(NSString*)identity withProperties:(NSDictionary*)userProperties withCompletion:(CompletionHandler)handler;
 @end
 
 #endif

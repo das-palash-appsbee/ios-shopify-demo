@@ -10,6 +10,8 @@
 @import CoreLocation;
 @import CoreBluetooth;
 
+typedef void(^CompletionHandler)(BOOL status, NSError *error);
+
 @protocol intemptDelegate <NSObject>
 /**
  Called upon entering the region
@@ -27,12 +29,11 @@
 
 @interface IntemptClient : NSObject
 
-@property (weak, nonatomic) id <intemptDelegate> delegate;
-
+@property (weak, nonatomic) id<intemptDelegate> delegate;
 @property (strong, nonatomic) CLLocation *currentLocation;
 
 /**
-Add Description
+ Retuns a fully initialzed `IntemptClient` object
  @param organizationId Organization Id
  @param trackerId  Tracker Id
  @param token Source token
@@ -40,7 +41,7 @@ Add Description
 + (IntemptClient *)sharedClientWithOrganizationId:(NSString *)organizationId andTrackerId:(NSString *)trackerId andToken:(NSString *)token;
 
 /**
-Add Description
+ Retuns a fully initialzed `IntemptClient` object
 */
 + (IntemptClient *)sharedClient;
 
@@ -57,20 +58,6 @@ Add Description
  */
 + (void)authorizeGeoLocationWhenInUse;
 
-/**
- Call this to enable geo location. You'll probably only have to call this if for some reason you've explicitly
- disabled geo location.
- Geo location is ENABLED by default.
- */
-+ (void)enableGeoLocation;
-
-/**
- Call this to disable geo location. If you don't want to pop up a message to users asking them to approve geo location
- services, call this BEFORE doing anything else with ITClient.
- 
- Geo location is ENABLED by default.
- */
-+ (void)disableGeoLocation;
 
 /**
  Call this to disable debug logging. It's disabled by default.
@@ -90,16 +77,10 @@ Add Description
 + (Boolean)isLoggingEnabled;
 
 /**
- Call this to retrieve an instance of ITEventStore.
- @return An instance of ITEventStore.
- */
-
-
-/**
  Call this if your code needs to use more than one Intempt project.  By convention, if you
  call this, you're responsible for releasing the returned instance once you're finished with it.
  
- Otherwise, just use [ITClient sharedClient].
+ Otherwise, just use [IntemptClient sharedClient].
  
  @param organizationId Your Intempt Organization ID.
  @param trackerId Your Intempt Tracker ID.
@@ -109,7 +90,8 @@ Add Description
 - (id)initWithOrganizationId:(NSString *)organizationId andTrackerId:(NSString *)trackerId andToken:(NSString *)token;
 
 /**
- Add description
+ Call this if your code needs to use more than one Intempt project along with some extra properties & properties overrides. By convention, if you
+ call this, you're responsible for releasing the returned instance once you're finished with it.
  @param organizationId Your Intempt Organization ID.
  @param sourceId Your Intempt Tracker ID.
  @param token Your Intempt Tracker security token.
@@ -120,37 +102,42 @@ Add Description
 -(id)initWithOrganizationId:(NSString *)organizationId andTrackerId:(NSString *)sourceId andToken:(NSString *)token andPropertiesOverrides:(NSDictionary *)propertiesOverrides andPropertiesOverridesBlock:(NSDictionary *(^)(NSString *))propertiesOverridesBlock;
 
 /**
-Add description
-@param event Your Intempt Organization ID
-@param eventCollection Your Intempt Tracker ID
-@param anError Your Intempt Tracker security token
+Use this Instance method when you want to add a specific event
+@param event A Dictionary
+@param eventCollection A event collection name
 @return If event is added it will return YES otherwise NO
 */
-- (BOOL)addEvent:(NSDictionary *)event toEventCollection:(NSString *)eventCollection error:(NSError **)anError;
+- (BOOL)addEvent:(NSDictionary *)event toEventCollection:(NSString *)eventCollection withCompletion:(CompletionHandler)handler;
 
 /**
-Add description
-@param identity Identity
-@param userProperties User properties dictionary
-@param error A NSError object
+Use this Instance method when you want to set a unique identifier (email or phone no.) for your app.
+@param identity An Identity i.e, email address or phone number
+@param userProperties A dictionary of user properties (set accroding to your custom schema's parameters on intempt developer site)
 */
-- (void)identify:(NSString*)identity withProperties:(NSDictionary *)userProperties error:(NSError **)error;
+- (void)identify:(NSString*)identity withProperties:(NSDictionary *)userProperties withCompletion:(CompletionHandler)handler;
 
 /**
-Add description
-@param collectionName Name of the collection
-@param userProperties User properties dictionary
-@param error A NSError object
+Use this Instance method when you specific tracking information to server. Creating custom Schema is mandatory to use this method. Go to your project on https://app.intempt.com and click on `Visit Schema` to add custom Schema
+@param collectionName Custom Schema name (Exclude the unique id)
+@param userProperties An Array of user properties which should be the same parameters you added in your custom schema
 */
-- (void)track:(NSString*)collectionName withProperties:(NSArray *)userProperties error:(NSError **)error;
+- (void)track:(NSString*)collectionName withProperties:(NSArray *)userProperties withCompletion:(CompletionHandler)handler;
 
 /**
-Add description
+Use this Instance method to initilaze the beacon for the app.
 @param orgId Your Intempt Organization ID.
-@param trackerId Your Intempt Tracker ID.
-@param token Your Intempt Tracker security token.
+@param trackerId Your Intempt Source ID.
+@param token Your Intempt Security Token.
 */
 - (void)withOrgId:(NSString*)orgId andSourceId:(NSString*)trackerId andToken:(NSString*)token uuidString:(NSString*)uuid;
+
+
+/**
+Use this Instance method when you want to set a unique identifier (email or phone no.) for your app. Its an alternative to default identify method and more likely you didn't enable tracking for the app.
+@param identity An Identity i.e, email address or phone number
+@param userProperties A dictionary of user properties (set accroding to your custom schema's parameters on intempt developer site)
+*/
+- (void)identifyUsingBeaconWith:(NSString*)identity withProperties:(NSDictionary *)userProperties withCompletion:(CompletionHandler)handler;
 
 /**
  Call this to initialize CLLocationManager if not initialized and start updating location
