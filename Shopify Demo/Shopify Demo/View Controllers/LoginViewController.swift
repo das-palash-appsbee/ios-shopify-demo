@@ -1,6 +1,5 @@
-
-
 import UIKit
+import Intempt
 
 protocol LoginControllerDelegate: class {
     func loginControllerDidCancel(_ loginController: LoginViewController)
@@ -49,6 +48,11 @@ extension LoginViewController {
     }
     
     @IBAction private func loginAction(_ sender: UIButton) {
+        IntemptTracker.identify(email, withProperties: nil) { (status, error) in
+            if(status) {
+                NSLog("identify successful")
+            }
+        }
         self.delegate?.loginController(self, didLoginWith: self.email, passowrd: self.password)
     }
     
