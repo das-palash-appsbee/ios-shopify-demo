@@ -822,7 +822,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Shopify Demo/Retail Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -859,7 +859,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Shopify Demo/Retail Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Palash Das (578FNYJC7X)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = A3K7YHSW33;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
